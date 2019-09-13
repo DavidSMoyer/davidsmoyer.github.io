@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Shipping Form</title>
+</head>
+<body>
+	<!--
+		Shipping Forms
+
+		The point of this web page is to simulate the process of setting where to ship an item.
+
+		The Text Inputs allows you to type freely
+
+		The Dropdown Menu allows you to choose one of three options by clicking on the menu]
+
+		The Radio Buttons allow you to choose one of three optionss by clicking on the empty dot beside it.
+
+		The Comment Section allows you to type freely in a much larger area than the text Inputs using the textarea input.
+
+		The Checkboxes allow you to check whether or not you'd like to recieve what it's asking.
+	-->
+
+	<!-- The beginning of the Form -->
+	<form method="get">
+
+		<!-- Address, Postal Code and City fields. -->
+		<label for="address" style="font-weight: bold; text-decoration: underline">Address:</label>
+		<br/>
+		<input required="1" type="text" name="address" id="address" size="25" maxlength="50" placeholder="Please enter your Address."/>
+		<br/>
+		<label for="code" style="font-weight: bold; text-decoration: underline">Postal Code:</label>
+		<br/>
+		<input required="1" type="text" name="code" id="code" size="25" maxlength="50" placeholder="Please enter your Postal Code."/>
+		<br/>
+		<label for="city" style="font-weight: bold; text-decoration: underline">City:</label>
+		<br/>
+		<input required="1" type="text" name="city" id="city" size="25" maxlength="50" placeholder="Please enter your City"/>
+		<br/>
+
+		<!-- Shipping method -->
+		<p style="font-weight: bold">
+			Please choose a shipping method.
+		</p>
+		<select>
+			<option value="standard">Standard Shipping</option>
+			<option value="oneday">One-Day Shipping</option>
+			<option value="twoday">Two-Day Shipping</option>
+		</select>
+		<br/>
+
+		<!-- Payment method -->
+		<p style="font-weight: bold">
+			Please choose a payment method.
+		</p>
+		<label><input type="radio" name="payment" value="paypal" checked="1"/>PayPal</label>
+		<br/>
+		<label><input type="radio" name="payment" value="debit"/>Debit Card</label>
+		<br/>
+		<label><input type="radio" name="payment" value="credit"/>Credit Card</label>
+		<br/>
+		<br/>
+
+		<!-- Comment Section -->
+		<label for="comments" style="font-weight: bold; font-style: italic">Comments:</label>
+		<br/>
+		<textarea rows="4" cols="40" name="comments" id="comments" placeholder="Add an optional comment..."></textarea>
+		<br/>
+		<br/>
+
+		<!-- Checkbox Section -->
+		<label><input type="checkbox" name="save-email" checked="1"/>Sign me up for e-mail updates.</label>
+		<br/>
+		<label><input type="checkbox" name="save-pay" checked="1"/>Save my payment information.</label>
+		<br/>
+		<br/>
+		<input type="submit" value="Submit"/>
+	</form>
+	<br>
+	<br>
+
+	<!-- Anchor to Index -->
+	<a href="index.html">Home</a>
+</body>
+</html>
