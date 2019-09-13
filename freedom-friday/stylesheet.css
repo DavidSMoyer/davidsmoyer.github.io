@@ -1,0 +1,58 @@
+body
+{
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-family: "Times New Roman", Times, Serif;
+}
+
+h1
+{
+	padding: 10px 20px;
+	border-color: white;
+	border-style: solid;
+	border-radius: 30px;
+	width: 250px;
+	margin: 10px auto;
+}
+
+p
+{
+	background-color: white;
+	border-color: black;
+	border-style: solid;
+	border-radius: 30px;
+	color: black;
+	margin: auto;
+	padding: 10px 20px;
+	width: 500px;
+}
+
+nav
+{
+	padding: 15px 30px;
+	margin: auto;
+	width: 475px;
+	background-color: white;
+	border-color: white;
+	border-style: solid;
+	border-radius: 10px;
+}
+
+a
+{
+	padding: 15px 20px;
+}
+
+a:link, a:visited
+{
+	color:black;
+	text-decoration: none;
+	border-style: solid;
+	border-color: black;
+}
+
+a:hover
+{
+	background-color: #DDDDDD;
+}
