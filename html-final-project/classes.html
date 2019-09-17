@@ -20,10 +20,10 @@
 		<hr/>
 		<nav>
 			<a href="index.html" class="nav">Home</a>
-			<a href="" class="nav">Personal Portfolio</a>
+			<a href="personal-portfolio.html" class="nav">Personal Portfolio</a>
 			<span class="nav">Classes</span>
-			<a href="" class="nav">Projects</a>
-			<a href="" class="nav">Employer Resources</a>
+			<a href="projects.html" class="nav">Projects</a>
+			<a href="employer-resources.html" class="nav">Employer Resources</a>
 			<a href="contact-me.html" class="nav">Contact Me</a>
 		</nav>
 		<hr/>
@@ -89,13 +89,14 @@
 	<!-- Mr. Hardman's Website -->
 	<iframe name="website" id="web" frameborder="0" width="500" height="500" class="hide"></iframe>
 	<br/><br/>
-	<a href="https://mistershardman.wixsite.com/ptec" target="website" class="display-web" onclick="toggleSite()">Display Mr. Hardman's Website.</a>
-	<br/><br/>
+	<a href="https://mistershardman.wixsite.com/ptec" target="website" class="display-web" onclick="toggleSite()" id="toggle">Display Mr. Hardman's Website.</a>
+	<br/><br/><br/>
 
 	<!-- Mr. Hardman's Video Playlist -->
-	<h2>
+	<h2 class="title" style="width:200px">
 		Mr. Hardman's Video Playlist
 	</h2>
+	<br/>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/watch?v=IaYYIECrKKs&list=PLX_p0xup7pddhnVhQFos2jGzzSOQ8mmkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br/><br/>
 
 
@@ -111,11 +112,13 @@
 			if(visible == 1)
 			{
 				document.getElementById("web").style.cssText = "display:inline";
+				document.getElementById("toggle").innerHTML = "Hide Mr. Hardman's Website"
 			}
 			else
 			{
 				visible = 0;
 				document.getElementById("web").style.cssText = "display:none";
+				document.getElementById("toggle").innerHTML = "Display Mr. Hardman's Website"
 			}
 		}
 	</script>

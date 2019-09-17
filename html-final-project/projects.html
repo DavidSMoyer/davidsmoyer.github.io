@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Projects</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+</head>
+<body>
+
+	<!-- Web Page Body Header -->
+	<div name="header">
+		<a href="https://www.pembinatrails.ca/schools/earlycollege/About-Us/Pages/default.aspx" class="ptec">
+			<img src="images/ptec_logo.png" alt="PTEC Site" class="ptec"/>
+		</a>
+		<h1 style="margin-top: 0" class="title">
+			My Projects
+		</h1>
+	
+		<hr/>
+		<nav>
+			<a href="index.html" class="nav">Home</a>
+			<a href="personal-portfolio.html" class="nav">Personal Portfolio</a>
+			<a href="classes.html" class="nav">Classes</a>
+			<span class="nav">Projects</span>
+			<a href="employer-resources.html" class="nav">Employer Resources</a>
+			<a href="contact-me.html" class="nav">Contact Me</a>
+		</nav>
+		<hr/>
+		<br/>
+	</div>
+
+	<!-- Beginning Paragraph -->
+	<p>
+		Here you can see the projects I have been working on. Here are three of my best!
+	</p>
+	<br/>
+
+	<!-- Slideshow -->
+	<div class="ss-container">
+
+		<!-- Slide 1 -->
+		<div class="slide">
+			<h4>1/3</h4><br/>
+			<img src="images/grappling.png" width="400" height="300" class="slide-img"/>
+			<h5>
+				Grappling. A simple game where the player must swing their way to the goal using the objects around them without falling or hitting any obstacles.
+				Created using the Unity engine.
+			</h5>
+		</div>
+
+		<!-- Slide 2 -->
+		<div class="slide">
+			<h4>2/3</h4><br/>
+			<img src="images/the-art-of-war.png" width="400" height="300" class="slide-img"/>
+			<h5>
+				The Art of War. A lengthy stradegy game you can play with up to 4 people with. Build structures, train units, and destroy the enemy's hero or their fortress.
+				Created using the Greenfoot engine.
+			</h5>
+		</div>
+
+		<!-- Slide 3 -->
+		<div class="slide">
+			<h4>3/3</h4><br/>
+			<img src="images/graveyard-rush.png" width="400" height="300" class="slide-img"/>
+			<h5>
+				Graveyard Rush. Survive hordes of zombies, pick up power-ups that they may drop, and live for as long as you can. You obtain scores from pickups and killing zombies.
+				Score is translated into points which can purchase customizables. Created in the Unity engine.
+			</h5>
+		</div>
+
+		<a class="prev" onclick="addSlide(-1)">&#171</a>
+		<a class="next" onclick="addSlide(1)">&#187</a>
+	</div>
+	<br/>
+
+	<!-- Final paragraph -->
+	<p>
+		And, of course, this website is one big project for my HTML unit!
+	</p>
+
+	<script>
+		//Initialize the variables
+		var index = 0;
+		var slides = document.getElementsByClassName("slide");
+
+		//Hide all the slides by default, except for the first one
+		for(var i = 0;i < slides.length;i++)
+		{
+			slides[i].style.display = "none";
+		}
+		slides[index].style.display = "block";
+
+		//Modify the slide number, and show that slide while hiding the others
+		function addSlide(n)
+		{
+			index += n;
+			for(var i = 0;i < slides.length;i++)
+			{
+				slides[i].style.display = "none";
+			}
+			if(index < 0)
+			{
+				index = slides.length-1;
+			}
+			if(index > slides.length-1)
+			{
+				index = 0;
+			}
+			slides[index].style.display = "block";
+		}
+	</script>
+
+</body>
+</html>

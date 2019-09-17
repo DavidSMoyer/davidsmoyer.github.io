@@ -1,3 +1,5 @@
+
+/* Sets the defaults of each web page */
 body
 {
 	background-color: white;
@@ -5,6 +7,7 @@ body
 	text-align: center;
 }
 
+/* Modifies all paragraphs to have a body, and take the white coloration */
 p
 {
 	font-family: sans-serif;
@@ -19,6 +22,7 @@ p
 	border-radius: 20px;
 }
 
+/* Modifies all navigation menus to have a body */
 nav
 {
 	background-color: #3F003F;
@@ -30,6 +34,7 @@ nav
 	border-radius: 10px;
 }
 
+/* Modifies all anchors and spans with the nav class to look like a button */
 a.nav:link, a.nav:visited, span.nav
 {
 	font-size: 20px;
@@ -41,27 +46,32 @@ a.nav:link, a.nav:visited, span.nav
 	margin-top: 30px;
 }
 
+/* Modifies all spans with the nav class to look like a pressed button */
 span.nav
 {
 	background-color: #2F002F;
 }
 
+/* Darken the anchor with the nav tag when it is hovered over */
 a.nav:hover
 {
 	background-color: #2F002F;
 }
 
+/* Darken the anchor with the nav class much more when it is clicked */
 a.nav:active
 {
 	background-color: #1F001F;
 }
 
+/* Modify the PTEC logo to fit on the top of the screen */
 img.ptec
 {
 	width: 75px;
 	height: 75px;
 }
 
+/* Modify any element with the title class with a body and centralize it */
 .title
 {
 	color: white;
@@ -75,6 +85,7 @@ img.ptec
 	margin: 0 auto;
 }
 
+/* Modify all tables to have a body */
 table
 {
 	margin: 0 auto;
@@ -86,6 +97,7 @@ table
 	padding: 10px;
 }
 
+/* Modify all table elements to have a border */
 td, th, tr
 {
 	border-style: solid;
@@ -93,12 +105,14 @@ td, th, tr
 	padding: 10px;
 }
 
+/* Modify table headers to be larger and underlined */
 th
 {
 	font-size: 20px;
 	text-decoration: underline;
 }
 
+/* Modify all anchors with the class display-web to look like a button */
 a.display-web:link, a.display-web:visited
 {	
 	background-color: #3F003F;
@@ -110,21 +124,25 @@ a.display-web:link, a.display-web:visited
 	padding: 10px 20px;
 }
 
+/* Darken the anchor with the display-web class when hovered over it */
 a.display-web:hover
 {
 	background-color: #2F002F;
 }
 
+/* Darken the anchor with the display-web class even more when it is clicked */
 a.display-web:active
 {
 	background-color: #1F001F;
 }
 
+/* Hide anything with the .hide tag */
 .hide
 {
 	display: none;
 }
 
+/* Modify all forms to have a body */
 form
 {
 	background-color: #3F003F;
@@ -135,4 +153,84 @@ form
 	width: 400px;
 	margin: 0 auto;
 	padding: 20px;
+}
+
+/* Modify all anchors with the download class to look like a button */
+a.download:link, a.download:visited
+{
+	background-color: #3F003F;
+	color: white;
+	text-decoration: none;
+	padding: 15px 30px;
+	font-size: 25px;
+	border-style: solid;
+	border-color: #3F003F;
+	border-radius: 20px;
+}
+
+/* Darkens all anchors with the download class when hovered over */
+a.download:hover
+{
+	background-color: #2F002F;
+}
+
+/* Darkens all anchors with the download class even more when clicked */
+a.download:active
+{
+	background-color: #1F001F;
+}
+
+/* Sets the body of all elements with the class ss(slideshow)-container*/
+.ss-container
+{
+	background-color: #3F003F;
+	width: 500px;
+	margin: 0 auto;
+	padding: 20px 30px;
+	padding-bottom: 40px;
+	border-color: #3F003F;
+	border-style: solid;
+	border-radius: 30px;
+}
+
+/* Creates a body for all elements with the slide class */
+.slide
+{
+	background-color: black;
+	border-color: black;
+	border-style: solid;
+	border-radius: 30px;
+	color: white;
+}
+
+/* Gives all elements with the .slide-img class rounded borders */
+.slide-img
+{
+	border-color: black;
+	border-style: solid;
+	border-radius: 20px;
+}
+
+/* Sets the body of all elements with the prev or next classes */
+.prev, .next
+{
+	cursor: pointer;
+	font-size: 30px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+	border-color: rgba(0,0,0,0);
+	border-style: solid;
+	border-radius: 20px;
+	padding: 10px 5px;
+	margin-top: 30px;
+}
+
+/* Sets the body of all elements with the me class. */
+.me
+{
+	transform: rotate(270deg);
+	margin-right: 0px;
+	border-color: white;
+	border-style: solid;
+	border-radius: 30px;
 }
