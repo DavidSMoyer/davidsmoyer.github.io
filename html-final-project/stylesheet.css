@@ -1,0 +1,138 @@
+body
+{
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+
+p
+{
+	font-family: sans-serif;
+	padding: 20px;
+	background-color: #3F003F;
+	color: white;
+	width: 50%;
+	margin: 0 auto;
+	border-style: solid;
+	border-color: #3F003F;
+	border-width: 5px;
+	border-radius: 20px;
+}
+
+nav
+{
+	background-color: #3F003F;
+	color: white;
+	padding: 10px 0;
+	border-style: solid;
+	border-color: #3F003F;
+	border-width: 5px;
+	border-radius: 10px;
+}
+
+a.nav:link, a.nav:visited, span.nav
+{
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+	border-style: solid;
+	border-color: black;
+	padding: 10px 20px;
+	margin-top: 30px;
+}
+
+span.nav
+{
+	background-color: #2F002F;
+}
+
+a.nav:hover
+{
+	background-color: #2F002F;
+}
+
+a.nav:active
+{
+	background-color: #1F001F;
+}
+
+img.ptec
+{
+	width: 75px;
+	height: 75px;
+}
+
+.title
+{
+	color: white;
+	background-color: #3F003F;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #3F003F;
+	border-width: 10px;
+	padding: 10px 20px;
+	width: 500px;
+	margin: 0 auto;
+}
+
+table
+{
+	margin: 0 auto;
+	background-color: #3F003F;
+	color: white;
+	border-style: solid;
+	border-color: #3F003F;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+td, th, tr
+{
+	border-style: solid;
+	border-color: black;
+	padding: 10px;
+}
+
+th
+{
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+a.display-web:link, a.display-web:visited
+{	
+	background-color: #3F003F;
+	color: white;
+	text-decoration: none;
+	border-color: black;
+	border-style: solid;
+	border-radius: 10px;
+	padding: 10px 20px;
+}
+
+a.display-web:hover
+{
+	background-color: #2F002F;
+}
+
+a.display-web:active
+{
+	background-color: #1F001F;
+}
+
+.hide
+{
+	display: none;
+}
+
+form
+{
+	background-color: #3F003F;
+	color: white;
+	border-style: solid;
+	border-color: #3F003F;
+	border-radius: 10px;
+	width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+}

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Classes</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+</head>
+<body>
+
+	<!-- Web Page Body Header -->
+	<div name="header">
+		<a href="https://www.pembinatrails.ca/schools/earlycollege/About-Us/Pages/default.aspx" class="ptec">
+			<img src="images/ptec_logo.png" alt="PTEC Site" class="ptec"/>
+		</a>
+		<h1 style="margin-top: 0" class="title">
+			My Classes
+		</h1>
+	
+		<hr/>
+		<nav>
+			<a href="index.html" class="nav">Home</a>
+			<a href="" class="nav">Personal Portfolio</a>
+			<span class="nav">Classes</span>
+			<a href="" class="nav">Projects</a>
+			<a href="" class="nav">Employer Resources</a>
+			<a href="contact-me.html" class="nav">Contact Me</a>
+		</nav>
+		<hr/>
+		<br/>
+	</div>
+
+	<!-- A paragraph regarding my time table -->
+	<p>
+		Currently, I am a student attending Pembina Trails Early College and Shaftesbury. This semester I am taking:
+		<br/>
+		<br/>Software Development 20S
+		<br/>Food/Nutrition 20S
+		<br/>Science 20S
+		<br/>IT Essentials 20S
+		<br/>English Language Arts 20S
+		<br/><br/>
+		Here is an example of my time table:
+	</p>
+	<br/><br/>
+
+	<!-- Time Table -->
+	<table>
+		<tr>
+			<th>Class</th>
+			<th>Period</th>
+			<th>Time</th>
+		</tr>
+		<tr>
+			<td>ELA</td>
+			<td>A</td>
+			<td>8:30 - 9:38</td>
+		</tr>
+		<tr>
+			<td>Software Development</td>
+			<td>B, C</td>
+			<td>9:38 - 11:55</td>
+		</tr>
+		<tr>
+			<td>Lunch</td>
+			<td>N/A</td>
+			<td>12:02 - 1:09</td>
+		</tr>
+		<tr>
+			<td>Science</td>
+			<td>D</td>
+			<td>1:09 - 2:19</td>
+		</tr>
+		<tr>
+			<td>Food/Nutrition</td>
+			<td>E</td>
+			<td>2:21 - 3:31</td>
+		</tr>
+	</table>
+	<br/><br/>
+
+	<!-- Information about Mr. Hardman's website and recorded lessons. -->
+	<p>
+		Mr. Hardman's Software Development course is a fun and engaging class. He has created a website and a youtube playlist
+		for our classes in case we miss a class so we do not fall behind.
+	</p>
+	<br/><br/>
+
+	<!-- Mr. Hardman's Website -->
+	<iframe name="website" id="web" frameborder="0" width="500" height="500" class="hide"></iframe>
+	<br/><br/>
+	<a href="https://mistershardman.wixsite.com/ptec" target="website" class="display-web" onclick="toggleSite()">Display Mr. Hardman's Website.</a>
+	<br/><br/>
+
+	<!-- Mr. Hardman's Video Playlist -->
+	<h2>
+		Mr. Hardman's Video Playlist
+	</h2>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/watch?v=IaYYIECrKKs&list=PLX_p0xup7pddhnVhQFos2jGzzSOQ8mmkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br/><br/>
+
+
+	<script>
+		// Runs when the window loads
+		var visible = 0;
+
+		//Toggles whether or not the website iframe is visible
+		function toggleSite()
+		{
+			
+			visible = visible + 1;
+			if(visible == 1)
+			{
+				document.getElementById("web").style.cssText = "display:inline";
+			}
+			else
+			{
+				visible = 0;
+				document.getElementById("web").style.cssText = "display:none";
+			}
+		}
+	</script>
+</body>
+</html>

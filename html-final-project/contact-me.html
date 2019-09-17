@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Me</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body
+
+	<!-- Web Page Body Header -->
+	<div name="header">
+		<a href="https://www.pembinatrails.ca/schools/earlycollege/About-Us/Pages/default.aspx" class="ptec">
+			<img src="images/ptec_logo.png" alt="PTEC Site" class="ptec"/>
+		</a>
+		<h1 style="margin-top: 0" class="title">
+			Contact Me
+		</h1>
+	
+		<hr/>
+		<nav>
+			<a href="index.html" class="nav">Home</a>
+			<a href="" class="nav">Personal Portfolio</a>
+			<a href="classes.html" class="nav">Classes</a>
+			<a href="" class="nav">Projects</a>
+			<a href="" class="nav">Employer Resources</a>
+			<span class="nav">Contact Me</span>
+		</nav>
+		<hr/>
+		<br/>
+	</div>
+
+	<!-- The beginning of the form. -->
+
+	<!--
+		The two text input fields require you to input your first and last name respectively.
+		The email input field requires you to input a valid email address.
+		The textarea input field requires you to input a message you want to send.
+		The submit input field allows you to submit the data.
+		The reset input field allows you to reset the data.
+	-->
+	<form action="https://formspree.io/moyer_ds@hotmail.com" method="POST">
+		<label for="fname" style="font-weight: bold">First Name:</label>
+		<input type="text" placeholder="Your First Name..." id="fname" required="1" name="first-name"/>
+		<br/><br/>
+		<label for="lname" style="font-weight: bold">Last Name:</label>
+		<input type="text" placeholder="Your Last Name..." id="lname" required="1" name="last-name"/>
+		<br/><br/>
+		<label for="mail" style="font-weight: bold">Your E-Mail:</label>
+		<input type="email" placeholder="Your Email Address..." id="mail" required="1" name="reply"/>
+		<br/><br/>
+		<label for="message" style="font-weight: bold">Message:</label>
+		<br/>
+		<textarea placeholder="The message you want to send me..." cols="25" rows="6" required="1" name="message"></textarea>
+		<br/><br/>
+		<input type="submit" value="Send">
+		<input type="reset">
+	</form>
+
+	<script>
+		
+	</script>
+</body>
+</html>
