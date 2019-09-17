@@ -228,6 +228,7 @@ a.download:active
 /* Sets the body of all elements with the me class. */
 .me
 {
+	transform: rotate(270deg);
 	margin-right: 0px;
 	border-color: white;
 	border-style: solid;
