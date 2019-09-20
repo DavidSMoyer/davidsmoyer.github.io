@@ -1,0 +1,58 @@
+div.nav
+{
+	font-size: 25px;
+	text-align: right;
+	border-bottom-style: solid;
+	border-color: black;
+	padding: 10px 0;
+	border-radius: 20px;
+}
+
+a.nav:link, a.nav:visited
+{
+	color: black;
+	text-decoration: none;
+	padding: 10px 20px;
+	margin: 10px;
+}
+
+a.nav:hover
+{
+	color: #AA00AA;
+	text-decoration: underline;
+}
+
+a.nav:active
+{
+	color: #880088;
+}
+
+h3.nav-title
+{
+	padding: 10px 20px;
+	margin: 10px 20px;
+	margin-right: 0px;
+}
+
+span.nav
+{
+	padding: 10px 20px;
+	color: #880088;
+	margin: 10px;
+}
+
+div.body
+{
+	border-color: black;
+	border-style: solid;
+	width: 75%;
+	font-size: 20px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+label
+{
+	font-weight: bold;
+}
