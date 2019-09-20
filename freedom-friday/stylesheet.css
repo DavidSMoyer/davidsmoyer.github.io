@@ -1,58 +1,58 @@
-body
+div.nav
 {
-	background-color: black;
-	color: white;
-	text-align: center;
-	font-family: "Times New Roman", Times, Serif;
-}
-
-h1
-{
-	padding: 10px 20px;
-	border-color: white;
-	border-style: solid;
-	border-radius: 30px;
-	width: 250px;
-	margin: 10px auto;
-}
-
-p
-{
-	background-color: white;
+	font-size: 25px;
+	text-align: right;
+	border-bottom-style: solid;
 	border-color: black;
-	border-style: solid;
-	border-radius: 30px;
+	padding: 10px 0;
+	border-radius: 20px;
+}
+
+a.nav:link, a.nav:visited
+{
 	color: black;
-	margin: auto;
-	padding: 10px 20px;
-	width: 500px;
-}
-
-nav
-{
-	padding: 15px 30px;
-	margin: auto;
-	width: 475px;
-	background-color: white;
-	border-color: white;
-	border-style: solid;
-	border-radius: 10px;
-}
-
-a
-{
-	padding: 15px 20px;
-}
-
-a:link, a:visited
-{
-	color:black;
 	text-decoration: none;
-	border-style: solid;
-	border-color: black;
+	padding: 10px 20px;
+	margin: 10px;
 }
 
-a:hover
+a.nav:hover
 {
-	background-color: #DDDDDD;
+	color: #AA00AA;
+	text-decoration: underline;
+}
+
+a.nav:active
+{
+	color: #880088;
+}
+
+h3.nav-title
+{
+	padding: 10px 20px;
+	margin: 10px 20px;
+	margin-right: 0px;
+}
+
+span.nav
+{
+	padding: 10px 20px;
+	color: #880088;
+	margin: 10px;
+}
+
+div.body
+{
+	border-color: black;
+	border-style: solid;
+	width: 75%;
+	font-size: 20px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+label
+{
+	font-weight: bold;
 }
