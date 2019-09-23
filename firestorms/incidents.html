@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Past Incidents</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+</head>
+<body>
+	<!-- Header -->
+	<h1 class="title">
+		Firestorms
+	</h1>
+	<h6>
+		&#169 David Moyer
+	</h6>
+	<hr/><br/>
+	<a href="index.html" class="home">Home</a><br/><br/>
+	<hr/>
+	<!-- End of Header -->
+
+	<!-- Slideshow-Container -->
+	<div class="slideshow">
+
+		<a onclick="addSlide(-1)" class="prev">&#8592;</a>
+		<a onclick="addSlide(1)" class="next">&#8594;</a>
+
+		<!-- Slide 1 -->
+		<div class="slide">
+			<h4 class="slide-text">1/3</h4>
+			<h5 class="slide-text">British Columbia Firestorm</h5>
+			<img src="images/bc.jpg" alt="A forest in British Columbia flooded with smoke." width="500" height="500" />
+			<p class="no-border slide-text">
+				In British Columbia, August 12, 2017, a massive wildfire
+				outbreak occurred. The massive wildfire had created it's own
+				storm system, being classified as a "pyroCbs," or a Firestorm.<br/><br/>
+				In the end the firestorm consumed 4 700 square miles of British 
+				Columbia. Five total Firestorms had formed, the resulting smoke
+				being detected almost as far as the North Pole. This was named
+				the "Mother of all pyroCbs," dealing over 127 million dollars in
+				damage.
+			</p>
+		</div>
+
+		<!-- Slide 2 -->
+		<div class="slide">
+			<h4 class="slide-text">2/3</h4>
+			<h5 class="slide-text">Chimney Tops 2 Fire</h5>
+			<img src="images/chimney.jpg" alt="The forest of Chimney Tops flooded with smoke." width="500" height="500" />
+			<p class="no-border slide-text">
+				A wildfire fighting in progress on November 23, 2016, a few days after
+				the wildfire evolved. Humidity dropped and strong winds moved over in the
+				period of a day. The massive plume of smoke and winds stopped helicopters
+				from engaging. Winds from 40-50mph with gusts of 87mph flooded the area.<br/><br/>
+				No structures in the park were damaged directly, but the wind did do minor damage. 17 000
+				acres were burned.
+			</p>
+		</div>
+
+		<!-- Slide 3 -->
+		<div class="slide">
+			<h4 class="slide-text">3/3</h4>
+			<h5 class="slide-text">Spokane Firestorm</h5>
+			<img src="images/spokane.jpg" alt="Someone's house engulfed in flames in Spokane." width="500" height="500" />
+			<p class="no-border slide-text">
+				In 1991, a massive firestorm rocked Spokane.
+				After forty-two days without rain or much weather of any kind, 
+				50 mph winds rushed into the area. Later, smoke from a nearby 
+				fire invaded the weather office.<br/><br/>
+				When the day ended 80 wildfires had ravaged the land. 112 homes were destroyed,
+				two people were killed, and 50 000 acres were scorched. Some of the fires still
+				burned out of control.
+			</p>
+		</div><br/>
+	</div>
+
+	<script>
+		// Initialize Variables
+		var slides = document.getElementsByClassName("slide");
+		var index = 0;
+		var i = 0;
+
+		// Hide all slides by default except for one
+		for(i = 0;i < slides.length;i++)
+		{
+			slides[i].style.display = "none";
+		}
+		slides[index].style.display = "block";
+
+		function addSlide(n)
+		{
+			for(i = 0;i < slides.length;i++)
+			{
+				slides[i].style.display = "none";
+			}
+			index += n;
+			if(index < 0)
+			{
+				index = slides.length-1;
+			}
+			if(index >= slides.length)
+			{
+				index = 0;
+			}
+			slides[index].style.display = "block";
+		}
+
+	</script>
+</body>
+</html>
