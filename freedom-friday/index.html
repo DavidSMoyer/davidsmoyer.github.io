@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Freedom Friday</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<script type="text/javascript" src="javascript/loaded.js"></script>
+</head>
+<body class="preload">
+
+	<!-- Nav Bar -->
+	<nav id="web-navbar">
+		<span>Home</span>
+		<a href="slideshow.html">Meme Slideshow</a>
+		<a href="projects.html">Projects</a>
+		<a href="">Page 4</a>
+		<a href="">Page 5</a>
+		<a href="#top">Back to Top</a>
+	</nav>
+
+	<!-- Title -->
+	<img src="images/title.jpg" class="title-pic" id="top" width="100%" />
+	<h5 id="caption">Photo by Johannes Plenio on Unsplash</h5>
+	<h1 id="title">Freedom Friday</h1>
+
+	<!-- Paragraph -->
+	<p class="offset-up">
+		<span class="p-title">Welcome to my Website!</span>
+		<br/><br/>
+		Here I am doing my Freedom Friday project, using languages like HTML, CSS, and Javascript.
+	</p>
+	<!-- Hidden Paragraph -->
+	<p style="display: none;" class="offset-up hidden" id="more-text">
+		This page alone is an example of CSS. The background, button, navigation menu, almost everything on this  page was modified with CSS.<br/><br/>
+		Meanwhile, only a small amount of JavaScript can be found on this current page. Just the button below to show more or less.
+	</p>
+	<!-- Button to Reveal Paragraph -->
+	<button id="more-text-button" style="position: relative;left: 47%;top: -100px;" onclick="showMore()">Show More</button>
+
+	<!-- Footer -->
+	<footer>
+		<h4>&#9400; David S. Moyer</h4>
+	</footer>
+	
+	<script>
+		// Contains whether or not the paragraph is visible
+		var x = false;
+
+		/*
+
+		showMore()
+
+		Toggles whether or not the hidden paragraph is visible.
+
+		*/
+		function showMore()
+		{
+			x = !x;
+			if(x == true)
+			{
+				document.getElementById("more-text").style.display = "block";
+				document.getElementById("more-text-button").innerHTML = "Show Less";
+			}
+			else
+			{
+				document.getElementById("more-text").style.display = "none";
+				document.getElementById("more-text-button").innerHTML = "Show More";
+			}
+		}
+	</script>
+</body>
+</html>

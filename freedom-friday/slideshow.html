@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Freedom Friday</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<script type="text/javascript" src="javascript/loaded.js"></script>
+</head>
+<body class="preload">
+
+	<!-- Nav Bar -->
+	<nav id="web-navbar">
+		<a href="index.html">Home</a>
+		<span>Meme Slideshow</span>
+		<a href="projects.html">Projects</a>
+		<a href="">Page 4</a>
+		<a href="">Page 5</a>
+		<a href="#top">Back to Top</a>
+	</nav>
+
+	<!-- Slideshow Container -->
+	<div id="slideshow">
+
+		<!-- Slide 1 -->
+		<div class="slide">
+			<h4 class="number-text">1/10</h4>
+			<img src="images/memes/don't-touch.png" width="700" height="500" style="left:45px"/>
+		</div>
+
+		<!-- Slide 2 -->
+		<div class="slide">
+			<h4 class="number-text">2/10</h4>
+			<img src="images/memes/booleans.jpg" width="600" height="500" style="left:100px"/>
+		</div>
+
+		<!-- Slide 3 -->
+		<div class="slide">
+			<h4 class="number-text">3/10</h4>
+			<img src="images/memes/debugging.jpg" width="600" height="500" style="left:100px"/>
+		</div>
+
+		<!-- Slide 4 -->
+		<div class="slide">
+			<h4 class="number-text">4/10</h4>
+			<img src="images/memes/document.jpg" width="600" height="500" style="left:100px"/>
+		</div>
+
+		<!-- Slide 5 -->
+		<div class="slide">
+			<h4 class="number-text">5/10</h4>
+			<img src="images/memes/bugs.jpg" width="600" height="500" style="left:100px"/>
+		</div>
+
+		<!-- Slide 6 -->
+		<div class="slide">
+			<h4 class="number-text">6/10</h4>
+			<img src="images/memes/expectation.jpg" width="600" height="500" style="left:100px"/>
+		</div>
+
+		<!-- Slide 7 -->
+		<div class="slide">
+			<h4 class="number-text">7/10</h4>
+			<img src="images/memes/two-types.jpg" width="600" height="500" style="left:100px"/>
+		</div>
+
+		<!-- Slide 8 -->
+		<div class="slide">
+			<h4 class="number-text">8/10</h4>
+			<img src="images/memes/understand.png" width="600" height="500" style="left:100px"/>
+		</div>
+
+		<!-- Slide 9 -->
+		<div class="slide">
+			<h4 class="number-text">9/10</h4>
+			<img src="images/memes/show-me.jpg" width="600" height="500" style="left:100px"/>
+		</div>
+
+		<!-- Slide 10 -->
+		<div class="slide">
+			<h4 class="number-text">10/10</h4>
+			<img src="images/memes/fixing.jpg" width="600" height="500" style="left:100px"/>
+		</div>
+
+		<!-- Previous and Next buttons -->
+		<a class="next" onclick="addSlide(1)">&#8250;</a>
+		<a class="prev" onclick="addSlide(-1)">&#8249;</a>
+	</div>
+
+	
+	<!-- Footer -->
+	<footer>
+		<h4>&#9400; David S. Moyer</h4>
+	</footer>
+
+	<script>
+		// Initialize variables
+		var slides = document.getElementsByClassName("slide"); // Contains all the slide elements.
+		var index = 0; // Contains the current slide index
+
+		// Run first
+		for(var i = 0;i < slides.length;i++)
+		{
+			slides[i].style.display = "none";
+		}
+		slides[index].style.display = "block";
+
+		/*
+
+		addSlide
+
+		Modifies the slide index by a select amount.
+
+		parameter - n - The number to modify the slide index by
+
+		*/
+		function addSlide(n)
+		{
+			for(var i = 0;i < slides.length;i++)
+			{
+				slides[i].style.display = "none";
+			}
+			index+=n;
+			if(index < 0)
+			{
+				index = slides.length-1;
+			}
+			if(index >= slides.length)
+			{
+				index = 0;
+			}
+			slides[index].style.display = "block";
+		}
+
+	</script>
+	
+</body>
+</html>
