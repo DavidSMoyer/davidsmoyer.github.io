@@ -1,0 +1,18 @@
+﻿body
+{
+	background-color: black;
+	color: white;
+	font-family: Impact, Helvetica, Sans-Serif;
+	text-align: center;
+}
+
+div
+{
+	background-color: white;
+	border-style: solid;
+	border-color: black;
+	border-radius: 20px;
+	color: black;
+	width: 30%;
+	margin: 0 auto;
+}
