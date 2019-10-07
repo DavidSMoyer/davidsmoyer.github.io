@@ -36,16 +36,16 @@ h2
 
 button
 {
-	height: 5vh;
-	width: 10vw;
-	font-size: 4vh;
+	height: 10vh;
+	width: 20%;
+	font-size: 8vh;
 	margin: 2vw;
 }
 
 #answer
 {
 	height: 5vh;
-	width: 25vw;
+	width: 50%;
 	font-size: 4vh;
 	margin-bottom: 2vh;
 }
