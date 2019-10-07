@@ -135,7 +135,7 @@ h2, h3, h4, h5, h6
 p
 {
 	font-family: Calibri;
-	font-size: 2vw;
+	font-size: 3.5vh;
 }
 
 /*
@@ -185,5 +185,6 @@ p
 	{
 		position: relative;
 		top: -5vh;
+		top: 0vh;
 	}
 }
