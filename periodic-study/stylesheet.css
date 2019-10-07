@@ -37,15 +37,15 @@ h2
 button
 {
 	height: 10vh;
-	width: 20%;
-	font-size: 5vh;
+	width: 30%;
+	font-size: 4vh;
 	margin: 2vw;
 }
 
 #answer
 {
 	height: 5vh;
-	width: 50%;
+	width: 70%;
 	font-size: 4vh;
 	margin-bottom: 2vh;
 }
