@@ -69,7 +69,7 @@ h2, h3, h4, h5, h6
 	cursor: pointer;
 }
 
-@media screen and (max-width: 320px)
+@media screen and (max-width: 400px)
 {
 	.nav-bar a, .nav-bar span
 	{
@@ -94,9 +94,10 @@ h2, h3, h4, h5, h6
 	{
 		margin-top: 50vh;
 	}
-	.title h1
+	.title h1;
 	{
 		font-size: 70.5vw;
+		top: 300%;
 	}
 }
 
