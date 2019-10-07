@@ -33,3 +33,18 @@ h2
 	font-size: 6vh;
 	text-decoration: underline;
 }
+
+button
+{
+	height: 5vh;
+	width: 10vw;
+	font-size: 4vh;
+}
+
+#answer
+{
+	height: 5vh;
+	width: 25vw;
+	font-size: 4vh;
+	margin-bottom: 2vh;
+}
