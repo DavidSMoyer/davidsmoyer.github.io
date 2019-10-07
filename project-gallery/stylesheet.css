@@ -21,11 +21,11 @@ h2, h3, h4, h5, h6
 	background-color: #CC57FE;
 	width: 100%;
 	height: 5vw;
-	margin-top: 0;
 	position: fixed;
 	top: -1vw;
 	padding-bottom: 3vw;
 	z-index: 10;
+	
 }
 
 .header h2
@@ -69,11 +69,13 @@ h2, h3, h4, h5, h6
 	cursor: pointer;
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 320px)
 {
 	.nav-bar a, .nav-bar span
 	{
 		display: block;
+		font-size: 3.5vw;
+		letter-spacing: 1vw;
 	}
 	.title h1
 	{
@@ -83,23 +85,38 @@ h2, h3, h4, h5, h6
 	{
 		border-width: 0.5vw;
 	}
+	.content img
+	{
+		display: block;
+		width: 100%;
+	}
+	.title
+	{
+		margin-top: 50vh;
+	}
+	.title h1
+	{
+		font-size: 70.5vw;
+	}
 }
 
 .title
 {
 	width: 100%;
-	height: 40vw;
+	height: 40vh;
 	overflow-y: hidden;
 	text-align: center;
+	position: relative;
+	top: 15vh;
 }
 
 .title h1
 {
 	font-family: "Times New Roman", Serif;
-	position: relative;
-	top: -120%;
 	font-size: 5vw;
 	background-color: #51BBFF;
+	position: relative;
+	top: -275%;
 	width: 25%;
 	left: 37%;
 	border-color: black;
@@ -120,13 +137,15 @@ h2, h3, h4, h5, h6
 
 .content
 {
+	overflow-y: hidden;
 	width: 100%;
 	height: 30vw;
-	overflow-y: hidden;
 	text-align: center;
 	border-style: solid;
 	border-color: black;
 	border-width: 0.25vw;
+	position: relative;
+	top: 15vh;
 }
 
 .content img
@@ -140,4 +159,5 @@ h2, h3, h4, h5, h6
 .content h2
 {
 	font-size: 3vw;
+	display: inline;
 }
