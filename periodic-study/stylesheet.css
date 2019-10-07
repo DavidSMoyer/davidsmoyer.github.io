@@ -13,6 +13,23 @@ div
 	border-color: black;
 	border-radius: 20px;
 	color: black;
-	width: 30%;
+	width: 60%;
 	margin: 0 auto;
+}
+
+p
+{
+	font-size: 4vh;
+	font-family: Helvetica, Sans-Serif;
+}
+
+h1
+{
+	font-size: 8vh;
+}
+
+h2
+{
+	font-size: 6vh;
+	text-decoration: underline;
 }
