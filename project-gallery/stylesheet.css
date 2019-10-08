@@ -78,6 +78,9 @@ h2, h3, h4, h5, h6
 	position: relative;
 	top: 15vh;
 	background-size: 100%;
+	border-color: black;
+	border-style: solid;
+	border-width: 0.25vw;
 	
 }
 
@@ -91,7 +94,7 @@ h2, h3, h4, h5, h6
 	border-style: solid;
 	border-width: 1vw;
 	border-radius: 1vw;
-	margin: 10vh auto;
+	margin: 20vh auto;
 }
 
 .magenta
@@ -150,6 +153,21 @@ p
 	left: -42.5vw;
 }
 
+footer
+{
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	position: fixed;
+	top: 93%;
+	z-index: 10;
+	background-color: #ff85db;
+	border-style: solid;
+	border-radius: 20px 20px 0 0;
+	text-decoration: none;
+	letter-spacing: 0.25vw;
+}
+
 /*
 	Responsive Website Design
 */
@@ -178,7 +196,6 @@ p
 	.title h1
 	{
 		font-size: 5vw;
-		margin-top: 50%;
 	}
 	.content
 	{
@@ -203,3 +220,4 @@ p
 		position: static;
 	}
 }
+
