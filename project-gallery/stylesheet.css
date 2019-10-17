@@ -201,11 +201,6 @@ footer h3
 	{
 		border-width: 0.5vw;
 	}
-	.content img
-	{
-		display: block;
-		width: 100%;
-	}
 	.title
 	{
 		margin-top: 30vh;
@@ -216,10 +211,11 @@ footer h3
 	}
 	.content
 	{
-		height: 100vh;
+		height: 120vh;
 	}
 	.content img
 	{
+		display: block;
 		height: 60vh;
 		width: 100%;
 	}
