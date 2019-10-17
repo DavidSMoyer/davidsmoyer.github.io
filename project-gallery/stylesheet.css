@@ -2,6 +2,7 @@
 {
 	color: #55105D;
 	background-color: #FFBAFB;
+	margin: 0;
 }
 
 
@@ -38,7 +39,7 @@ h2, h3, h4, h5, h6
 .nav-bar
 {
 	width: 100%;
-	background-color: #9097FB;
+	background-color: #7E44B9;
 	position: relative;
 	top: -1vw;
 	text-align: center;
@@ -52,27 +53,28 @@ h2, h3, h4, h5, h6
 	font-size: 2vw;
 	font-family: Impact, Helvetica;
 	padding: 0 2vw;
-	background-color: #6472F3;
+	background-color: #F364E0;
+	color: #55105D;
 	margin: 0 1vw;
 	text-decoration: none;
 }
 
 .nav-bar span
 {
-	background-color: #64BFF3;
-	color: #01FFFF;
+	background-color: #F3648B;
+	color: #FFB7FD;
 }
 
 .nav-bar a:hover
 {
-	background-color: #5462E3;
+	background-color: #E354D0;
 	cursor: pointer;
 }
 
 .nav-bar a:active
 {
-	background-color: #01FFFF;
-	color: #64BFF3;
+	background-color: #F374F0;
+	color: #75307D;
 }
 
 .title
@@ -95,7 +97,8 @@ h2, h3, h4, h5, h6
 {
 	font-family: "Times New Roman", Serif;
 	font-size: 5vw;
-	background-color: #51BBFF;
+	background-color: #82188F;
+	color: #F5A2FF;
 	width: 25%;
 	border-color: black;
 	border-style: solid;
@@ -114,7 +117,7 @@ h2, h3, h4, h5, h6
 	background-color: #FFBAFB;
 }
 
-.content-title
+.content
 {
 	overflow-y: hidden;
 	width: 100%;
@@ -128,7 +131,7 @@ h2, h3, h4, h5, h6
 	overflow-x: hidden;
 }
 
-.content-title img
+.content img
 {
 	float: left;
 	border-color: black;
@@ -136,7 +139,7 @@ h2, h3, h4, h5, h6
 	border-width: 0.25vw;
 }
 
-.content-title h2
+.content h2
 {
 	font-size: 4vh;
 	display: inline;
@@ -148,13 +151,13 @@ p
 	font-size: 3vh;
 }
 
-.content-title img.right
+.content img.right
 {
 	position: relative;
 	left: 55vw;
 }
 
-.content-title h2.left, .content-title p.left
+.content h2.left, .content p.left
 {
 	position: relative;
 	left: -42.5vw;
@@ -198,7 +201,7 @@ footer h3
 	{
 		border-width: 0.5vw;
 	}
-	.content-title img
+	.content img
 	{
 		display: block;
 		width: 100%;
@@ -211,11 +214,11 @@ footer h3
 	{
 		font-size: 5vw;
 	}
-	.content-title
+	.content
 	{
 		height: 100vh;
 	}
-	.content-title img
+	.content img
 	{
 		height: 60vh;
 		width: 100%;
@@ -229,7 +232,7 @@ footer h3
 	{
 		font-size: 7vh;
 	}
-	.content-title img.right, .content-title h2.left, .content-title p.left
+	.content img.right, .content h2.left, .content p.left
 	{
 		position: static;
 	}
