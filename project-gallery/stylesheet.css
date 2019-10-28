@@ -80,7 +80,7 @@ h2, h3, h4, h5, h6
 .title
 {
 	background-image: url(images/home-title.jpg);
-	width: 100%;
+	width: calc(100% - 8px);
 	height: 40vh;
 	overflow-y: hidden;
 	text-align: center;
@@ -120,7 +120,7 @@ h2, h3, h4, h5, h6
 .content
 {
 	overflow-y: hidden;
-	width: 100%;
+	width: calc(100% - 8px);
 	height: 50vh;
 	text-align: center;
 	border-style: solid;
@@ -154,7 +154,7 @@ p
 .content img.right
 {
 	position: relative;
-	left: 55vw;
+	left: 57vw;
 }
 
 .content h2.left, .content p.left
@@ -165,7 +165,7 @@ p
 
 footer
 {
-	width: 100%;
+	width: calc(100% - 16px);
 	text-align: center;
 	margin: 0 auto;
 	position: fixed;
@@ -183,6 +183,42 @@ footer h3
 	text-decoration: none;
 	font-size: 3vh;
 	margin-top: 1.5vh;
+}
+
+nav.web-nav
+{
+	position: fixed;
+	right: 3vw;
+	top: 30vh;
+	z-index: 10;
+}
+
+nav.web-nav ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav.web-nav li
+{
+	margin: 0;
+	padding: 0;
+	line-height: 3vh;
+}
+
+nav.web-nav a:link, nav.web-nav a:visited
+{
+	text-decoration: none;
+	color: #5555FF;
+	font-size: 2vh;
+	margin: 0;
+	padding: 0;
+}
+
+nav.web-nav a:hover
+{
+	text-decoration: underline;
 }
 
 /*
