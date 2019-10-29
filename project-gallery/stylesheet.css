@@ -198,7 +198,7 @@ nav.web-nav
 {
 	position: fixed;
 	right: 3vw;
-	top: 30vh;
+	top: 20vh;
 	z-index: 10;
 }
 
@@ -282,10 +282,13 @@ nav.web-nav a:hover, nav.web-nav a:focus
 	{
 		position: static;
 	}
+	nav.web-nav
+	{
+		top: 5vh;
+	}
 	nav.web-nav a:link, nav.web-nav a:visited
 	{
-		font-size: 4vh;
-		line-height: 7.5vh;
+		line-height: 6vh;
 	}
 }
 
