@@ -8,6 +8,7 @@ body
 	color: #55105D;
 	background-color: #FFBAFB;
 	margin: 0;
+	overflow-x: hidden;
 }
 
 
@@ -87,7 +88,7 @@ h2, h3, h4, h5, h6
 .title
 {
 	background-image: url(images/home-title.jpg);
-	width: calc(100% - 8px);
+	width: 100%;
 	height: 40vh;
 	overflow-y: hidden;
 	text-align: center;
@@ -131,7 +132,7 @@ h2, h3, h4, h5, h6
 .content
 {
 	overflow-y: hidden;
-	width: calc(100% - 8px);
+	width: 100%;
 	height: 50vh;
 	text-align: center;
 	border-style: solid;
@@ -173,7 +174,7 @@ p
 
 footer
 {
-	width: calc(100% - 16px);
+	width: 100%;
 	text-align: center;
 	margin: 0 auto;
 	position: fixed;
@@ -246,6 +247,9 @@ nav.web-nav a:hover, nav.web-nav a:focus
 	.nav-bar
 	{
 		border-width: 0.5vw;
+		top: 11vh;
+		left: -1vw;
+		width: 102%;
 	}
 	.title
 	{
@@ -258,25 +262,26 @@ nav.web-nav a:hover, nav.web-nav a:focus
 	.content
 	{
 		height: 120vh;
+		width: 100%;
 	}
 	.content img
 	{
 		display: block;
 		height: 60vh;
-		width: 100%;
 	}
 	.header
 	{
 		position: relative;
-		top: 0vh;
-	}
-	.header h2
-	{
-		font-size: 7vh;
+		margin-bottom: 0;
 	}
 	.content img.right, .content h2.left, .content p.left
 	{
 		position: static;
+	}
+	nav.web-nav a:link, nav.web-nav a:visited
+	{
+		font-size: 5vh;
+		line-height: 7.5vh;
 	}
 }
 
