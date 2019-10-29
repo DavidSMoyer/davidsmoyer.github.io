@@ -37,16 +37,18 @@ h2, h3, h4, h5, h6
 {
 	text-align: center;
 	letter-spacing: 1vw;
-	font-size: 5vh;
-	text-decoration: none;
+	font-size: 7vh;
+	text-decoration: underline;
+	padding: 1vh 0;
+	margin: 2vh;
 }
 
 .nav-bar
 {
 	width: 100%;
 	background-color: #7E44B9;
-	position: relative;
-	top: -1vw;
+	position: absolute;
+	bottom: -4vh;
 	text-align: center;
 	border-bottom-style: solid;
 	border-color: black;
@@ -70,7 +72,7 @@ h2, h3, h4, h5, h6
 	color: #FFB7FD;
 }
 
-.nav-bar a:hover
+.nav-bar a:hover,.nav-bar a:focus
 {
 	background-color: #E354D0;
 	cursor: pointer;
@@ -224,7 +226,7 @@ nav.web-nav a:link, nav.web-nav a:visited
 	padding: 0;
 }
 
-nav.web-nav a:hover
+nav.web-nav a:hover, nav.web-nav a:focus
 {
 	text-decoration: underline;
 }
