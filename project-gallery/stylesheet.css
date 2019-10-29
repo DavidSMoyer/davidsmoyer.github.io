@@ -274,13 +274,17 @@ nav.web-nav a:hover, nav.web-nav a:focus
 		position: relative;
 		margin-bottom: 0;
 	}
+	.header h2
+	{
+		font-size: 5vh;
+	}
 	.content img.right, .content h2.left, .content p.left
 	{
 		position: static;
 	}
 	nav.web-nav a:link, nav.web-nav a:visited
 	{
-		font-size: 5vh;
+		font-size: 4vh;
 		line-height: 7.5vh;
 	}
 }
