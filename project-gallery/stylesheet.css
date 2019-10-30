@@ -152,6 +152,14 @@ h2, h3, h4, h5, h6
 {
 	font-size: 4vh;
 	display: inline;
+	
+}
+
+.content:not(.index-content) h2
+{
+	position: absolute;
+	top: 10vh;
+	right: 15vh;
 }
 
 p
@@ -268,6 +276,14 @@ nav.web-nav a:hover, nav.web-nav a:focus
 	{
 		display: block;
 		height: 60vh;
+	}
+	.content h2
+	{
+		position: static;
+	}
+	.content p
+	{
+		font-size: 5vh;
 	}
 	.header
 	{
