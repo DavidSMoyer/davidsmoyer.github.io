@@ -299,7 +299,6 @@ nav.web-nav a:hover, nav.web-nav a:focus
 		position: absolute;
 		top: 30%;
 		left: 10%;
-		font-size: 4vh;
 	}
 	.content:not(.index-content) h2
 	{
