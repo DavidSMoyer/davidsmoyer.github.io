@@ -168,6 +168,12 @@ p
 	font-size: 3vh;
 }
 
+.content p
+{
+	width: 95%;
+	margin: 0 auto;
+}
+
 .content img.right
 {
 	position: relative;
@@ -276,6 +282,7 @@ nav.web-nav a:hover, nav.web-nav a:focus
 	{
 		display: block;
 		height: 60vh;
+		position: static;
 	}
 	.content h2
 	{
