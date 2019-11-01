@@ -141,6 +141,7 @@ h2, h3, h4, h5, h6
 	position: relative;
 	top: 15vh;
 	overflow-x: hidden;
+	position: relative;
 }
 
 .content img
@@ -150,7 +151,7 @@ h2, h3, h4, h5, h6
 
 .content h2
 {
-	font-size: 4vh;
+	font-size: 8vh;
 	display: inline;
 	
 }
@@ -277,7 +278,7 @@ nav.web-nav a:hover, nav.web-nav a:focus
 	{
 		height: 120vh;
 		width: 100%;
-		y-overflow: visible;
+		y-overflow: hidden;
 	}
 	.content img
 	{
@@ -288,13 +289,30 @@ nav.web-nav a:hover, nav.web-nav a:focus
 	}
 	.content h2
 	{
-		position: static;
 		color: #F5A2FF;
 		background-color: #82188F;
 		border-color: black;
 		border-style: solid;
 		border-width: 1vw;
 		border-radius: 1vw;
+		margin: 0 auto;
+		position: absolute;
+		top: 30%;
+		left: 10%;
+		font-size: 4vh;
+	}
+	.content:not(.index-content) h2
+	{
+		color: #F5A2FF;
+		background-color: #82188F;
+		border-color: black;
+		border-style: solid;
+		border-width: 1vw;
+		border-radius: 1vw;
+		margin: 0 auto;
+		position: absolute;
+		top: 30%;
+		left: 10%;
 	}
 	.content p
 	{
@@ -308,10 +326,6 @@ nav.web-nav a:hover, nav.web-nav a:focus
 	.header h2
 	{
 		font-size: 5vh;
-	}
-	.content img.right, .content h2.left, .content p.left
-	{
-		position: static;
 	}
 	nav.web-nav
 	{
