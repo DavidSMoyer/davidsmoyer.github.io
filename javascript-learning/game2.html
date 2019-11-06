@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tron Game</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	<style>
+		canvas
+		{
+			border: 2px solid white;
+		}
+	</style>
+</head>
+<body style="background-color: black;">
+
+	<canvas id="game"></canvas>
+	<br/><br/><a href="index.html">Home</a>
+	<br/><br/><button id="start" onclick="setup()">Start</button>
+
+	<script>
+		var players = [];
+
+		function component(x, y, color, width, height)
+		{
+			this.direction = [0,-5];
+			this.x = x;
+			this.y = y;
+			this.color = color;
+			this.width = width;
+			this.height = height;
+			this.walls = [];
+			this.lost = false;
+			this.update = function()
+			{
+				this.moveObject();
+				this.ctx = world.context;
+				this.ctx.fillStyle = color;
+				this.ctx.fillRect(this.x - (this.width/2), this.y - (this.height/2), this.width, this.height);
+			},
+			this.moveObject = function()
+			{
+				this.walls.push(new wall(this.x, this.y, this.color, this))
+				this.x += this.direction[0];
+				this.y += this.direction[1];
+			},
+			this.collide = function()
+			{
+				this.bothWalls = players[0].walls.concat(players[1].walls);
+				for(var i = 0; i < this.bothWalls.length;i++)
+				{
+					if(this.x < this.bothWalls[i].x + (this.bothWalls[i].width/2) && this.x > this.bothWalls[i].x - (this.bothWalls[i].width/2) && this.y < this.bothWalls[i].y + (this.bothWalls[i].height/2) && this.y > this.bothWalls[i].y - (this.bothWalls[i].height/2))
+					{
+						clearInterval(world.interval);
+						this.lost = true;
+						gameOver();
+						return;
+					}
+				}
+				if(this.x <= 0 || this.x >= world.canvas.width || this.y <= 0 || this.y >= world.canvas.height)
+				{
+					clearInterval(world.interval);
+					this.lost = true;
+					gameOver();
+					return;
+				}
+			}
+		}
+
+		function wall(x, y, color, owner)
+		{
+			this.x = x;
+			this.y = y;
+			this.color = color;
+			this.width = 3;
+			this.height = 3;
+			this.active = false;
+			this.owner = owner;
+			this.update = function()
+			{
+				if(!(this.owner.x < this.x + (this.width/2) && this.owner.x > this.x - (this.width/2) && this.owner.y < this.y + (this.height/2) && this.owner.y > this.y - (this.height/2)))
+				{
+					this.active = true;
+				}
+				this.ctx = world.context;
+				this.ctx.fillStyle = color;
+				this.ctx.fillRect(this.x - (this.width/2), this.y - (this.height/2), this.width, this.height);
+			}
+		}
+
+		var world = {
+			canvas : document.getElementById("game"),
+			start : function()
+			{
+				this.canvas.height = "500";
+				this.canvas.width = "700";
+				this.context = this.canvas.getContext("2d");
+				this.interval = setInterval(updateGame,45);
+				window.addEventListener('keydown', function(e)
+				{
+					world.keys = (world.keys || []);
+					world.keys[e.keyCode] = e.keyCode;
+				})
+				window.addEventListener('keyup', function(e)
+				{
+					world.keys[e.keyCode] = false;
+				})
+			},
+			clear : function()
+			{
+				this.context.fillStyle = "rgba(0,0,0,0.05)";
+				this.context.fillRect(0,0,this.canvas.width,this.canvas.height);
+			}
+		}
+
+		function setup()
+		{
+			document.getElementById("start").style.display = "none";
+			world.start();
+			players[0] = new component(355, 495, "red", 10, 10);
+			players[1] = new component(345, 495, "blue", 10, 10);
+		}
+
+		function updateGame()
+		{
+			world.clear();
+			keyPress();
+			for(var i = 0;i < players.length;i++)
+			{
+				players[i].update();
+				for(var j = 0;j < players[i].walls.length;j++)
+				{
+					players[i].walls[j].update();
+				}
+				players[i].collide();
+			}
+		}
+
+		function keyPress()
+		{
+			if (world.keys && world.keys[39] && players[0].direction[0] != -5) 
+			{
+				players[0].direction[0] = 5;
+				players[0].direction[1] = 0;
+			}
+			if (world.keys && world.keys[40] && players[0].direction[1] != -5) 
+			{
+				players[0].direction[1] = 5;
+				players[0].direction[0] = 0;
+			}
+			if (world.keys && world.keys[37] && players[0].direction[0] != 5) 
+			{
+				players[0].direction[0] = -5;
+				players[0].direction[1] = 0;
+			}
+			if (world.keys && world.keys[38] && players[0].direction[1] != 5)  
+			{
+				players[0].direction[1] = -5;
+				players[0].direction[0] = 0;
+			}
+			if (world.keys && world.keys[87] && players[1].direction[1] != 5) 
+			{
+				players[1].direction[1] = -5;
+				players[1].direction[0] = 0;
+			}
+			if (world.keys && world.keys[65] && players[1].direction[0] != 5) 
+			{
+				players[1].direction[0] = -5;
+				players[1].direction[1] = 0;
+			}
+			if (world.keys && world.keys[83] && players[1].direction[1] != -5) 
+			{
+				players[1].direction[1] = 5;
+				players[1].direction[0] = 0;
+			}
+			if (world.keys && world.keys[68] && players[1].direction[0] != -5) 
+			{
+				players[1].direction[0] = 5;
+				players[1].direction[1] = 0;
+			}
+		}
+
+		function gameOver()
+		{
+			var index = 0;
+			for(var i = 0;i < players.length;i++)
+			{
+				if(players[i].lost == false)
+				{
+					index = i;
+				}
+			}
+			var ctx = world.context;
+			ctx.fillStyle = "white";
+			ctx.font = "30px Impact";
+			ctx.fillText("Player " + (index+1) + " wins!", 275, world.canvas.height/4);
+			document.getElementById("start").style.display = "inline";
+		}
+	</script>
+</body>
+</html>

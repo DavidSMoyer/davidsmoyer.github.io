@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>The Impossible Button</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+</head>
+<body>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<button id="impossible" onmouseover="no()" style="position: absolute">Impossible Button</button>
+	<a href="index.html">Home</a>
+
+	<script>
+		var button = document.getElementById("impossible");
+		button.style.left = Math.round(Math.random() * (window.innerWidth - 100)) + 50 + "px";
+		button.style.top = Math.round(Math.random() * (window.innerHeight - 100)) + 50 + "px";
+
+		function no()
+		{
+			button.style.position = "absolute";
+			button.style.left = Math.round(Math.random() * (window.innerWidth - 100)) + 50 + "px";
+			button.style.top = Math.round(Math.random() * (window.innerHeight - 100)) + 50 + "px";
+		}
+	</script>
+</body>
+</html>

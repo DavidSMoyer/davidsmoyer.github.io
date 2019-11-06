@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Clock</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+
+	<style>
+
+		#clock
+		{
+			display: inline;
+			margin: 0 auto;
+			padding: 5px 10px;
+			background-color: #AACCAA;
+			border: 10px solid blue;
+			border-left-width: 30px;
+			border-right-width: 30px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>What time is it?</h1>
+	<p>It is currently</p><br/>
+	<h3 id="clock"></h3><br/><br/>
+	<p>The date is <span id="date"></span></p>
+	<br/>
+	<a href="index.html">Home</a>
+
+	<script>
+		function updateTime()
+		{
+			var now = new Date();
+			var minutes = now.getMinutes() + "";
+			var seconds = now.getSeconds() + "";
+			if(minutes.length == 1)
+			{
+				minutes = "0" + minutes;
+			}
+			if(seconds.length == 1)
+			{
+				seconds = "0" + seconds;
+			}
+			if(now.getHours() <= 12)
+			{
+				document.getElementById("clock").innerHTML = now.getHours() + ":" + minutes + ":" + seconds + " AM";
+			}
+			else
+			{
+				document.getElementById("clock").innerHTML = now.getHours()-12 + ":" + minutes + ":" + seconds + " PM";
+			}
+			var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			var day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+			var year = parseInt(now.getYear(), 10) - 100 + 2000;
+			document.getElementById("date").innerHTML = month[now.getMonth()] + " " + now.getDate() + ", " + year + ". It is " + day[now.getDay()] + ".";
+		}
+		setInterval(updateTime, 1);
+	</script>
+</body>
+</html>

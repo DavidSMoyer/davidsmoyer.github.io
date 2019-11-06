@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Pong</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+</head>
+<body style="background-color: black">
+	<canvas id="game" style="border: 2px white solid"></canvas><br/><br/>
+	<button id="start" style="display:none" onclick="startGame()">Start</button>
+	<button class="mode" onclick="setMode(1)">Easy AI</button>
+	<button class="mode" onclick="setMode(2)">Medium AI</button>
+	<button class="mode" onclick="setMode(3)">Hard AI</button>
+	<button class="mode" onclick="setMode(4)">Impossible AI</button>
+	<br/><br/>
+	<a href="index.html">Home</a>
+
+	<script>
+		var players = [];
+		var ball;
+		var mode;
+
+		var world = {
+			canvas : document.getElementById("game"),
+			prepare : function()
+			{
+				this.context = this.canvas.getContext("2d");
+				this.canvas.width = 800;
+				this.canvas.height = 400;
+				window.addEventListener('keydown', function(e)
+				{
+					world.keys = (world.keys || []);
+					world.keys[e.keyCode] = e.keyCode;
+				})
+				window.addEventListener('keyup', function(e)
+				{
+					world.keys[e.keyCode] = false;
+				})
+			},
+			start : function()
+			{
+				this.interval = setInterval(updateGame, 25);
+			},
+			clear : function()
+			{
+				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+				this.context.fillStyle = "white";
+				for(var i = 5;i < 400;i+= 20)
+				{
+					this.context.fillRect(397.5, i, 5, 10);
+				}
+				this.context.font = "30px Impact";
+				this.context.fillText(players[0].score, 370, 50);
+				this.context.fillText(players[1].score, 415, 50);
+			}
+		}
+
+		function bar(x, y, ai)
+		{
+			this.x = x;
+			this.y = y;
+			this.ai = ai;
+			this.height = 100;
+			this.width = 15;
+			this.score = 0;
+			this.update = function()
+			{
+				if(this.ai == false)
+				{
+					this.detectKeys();
+				}
+				else
+				{
+					this.followBall();
+				}
+				this.ctx = world.context;
+				this.ctx.fillStyle = "white";
+				this.ctx.fillRect(this.x - (this.width/2), this.y - (this.height/2), this.width, this.height);
+			}
+			this.detectKeys = function()
+			{
+				if(world.keys && world.keys[38])
+				{
+					this.y -= 8;
+					if(this.y - 50 <= 0)
+					{
+						this.y = 50;
+					}
+				}
+				if(world.keys && world.keys[40])
+				{
+					this.y += 8;
+					if(this.y + 50>= world.canvas.height)
+					{
+						this.y = world.canvas.height - 50;
+					}
+				}
+			}
+			this.followBall = function()
+			{
+				if(mode == 1)
+				{
+					if(ball.x < world.canvas.width/2)
+					{
+						if(ball.y > this.y + 40)
+						{
+							this.y += 7;
+						}
+						if(ball.y < this.y - 40)
+						{
+							this.y -= 7;
+						}
+					}
+				}
+				if(mode == 2)
+				{
+					if(ball.x < world.canvas.width/2)
+					{
+						if(ball.y > this.y + 20)
+						{
+							this.y += 8;
+						}
+						if(ball.y < this.y - 20)
+						{
+							this.y -= 8;
+						}
+					}
+					else
+					{
+						if(world.canvas.height/2 > this.y + 10)
+						{
+							this.y += 4;
+						}
+						else if (world.canvas.height/2 < this.y - 10)
+						{
+							this.y -= 4;
+						}
+					}
+				}
+				if(mode == 3)
+				{
+					if(ball.x < world.canvas.width/2 + world.canvas.width/4)
+					{
+						if(ball.y > this.y + 10)
+						{
+							this.y += 9;
+						}
+						if(ball.y < this.y -10)
+						{
+							this.y -= 9;
+						}
+					}
+					else
+					{
+						if(world.canvas.height/2 > this.y + 10)
+						{
+							this.y += 5;
+						}
+						else if (world.canvas.height/2 < this.y - 10)
+						{
+							this.y -= 5;
+						}
+					}
+				}
+				if(mode == 4)
+				{
+					this.y = ball.y;
+				}
+			}
+		}
+
+		function ball(x, y, speedx, speedy)
+		{
+			this.x = x;
+			this.y = y;
+			this.speed = [speedx, speedy];
+			this.radius = 10;
+			this.active = false;
+			this.update = function()
+			{
+				if(this.active == true)
+				{
+					this.moveBall();
+					this.collide();
+				}
+				this.ctx = world.context;
+				this.ctx.beginPath();
+				this.ctx.fillStyle = "white";
+				this.ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
+				this.ctx.fill();
+			}
+			this.moveBall = function()
+			{
+				this.x += this.speed[0];
+				this.y += this.speed[1];
+			}
+			this.collide = function()
+			{
+				if(this.y - this.radius <= 0 || this.y + this.radius >= world.canvas.height)
+				{
+					this.speed[1] *= -1;
+					if(this.speed[1] > 0)
+					{
+						this.speed[1] += 0.25;
+					}
+					else
+					{
+						this.speed[1] -= 0.25;
+					}
+				}
+				for(var i = 0;i < players.length;i++)
+				{
+					var distX = Math.abs(this.x - players[i].x);
+					var distY = Math.abs(this.y - players[i].y);
+
+					if(distX <= players[i].width/2 && distY <= players[i].height/2)
+					{
+						console.log(players[i].width/2, distX);
+						this.speed[0] *= -1;
+						if(this.speed[0] < 0)
+						{
+							this.speed[0] -= 0.5;
+						}
+						else
+						{
+							this.speed[0] += 0.5;
+						}
+					}
+				}
+				if(this.x + this.radius <= 0)
+				{
+					players[1].score++;
+					this.x = world.canvas.width/2;
+					this.y = world.canvas.height/2;
+					if(Math.round(Math.random()) == 0)
+					{
+						this.speed[0] = -5
+					}
+					else
+					{
+						this.speed[0] = 5;
+					}
+					if(Math.round(Math.random()) == 0)
+					{
+						this.speed[1] = -5
+					}
+					else
+					{
+						this.speed[1] = 5;
+					}
+					for(var i = 0;i < players.length;i++)
+					{
+						players[i].y = world.canvas.height/2;
+					}
+				}
+				if(this.x - this.radius >= world.canvas.width)
+				{
+					players[0].score++;
+					this.x = world.canvas.width/2;
+					this.y = world.canvas.height/2;
+					if(Math.round(Math.random()) == 0)
+					{
+						this.speed[0] = -5
+					}
+					else
+					{
+						this.speed[0] = 5;
+					}
+					if(Math.round(Math.random()) == 0)
+					{
+						this.speed[1] = -5
+					}
+					else
+					{
+						this.speed[1] = 5;
+					}
+					for(var i = 0;i < players.length;i++)
+					{
+						players[i].y = world.canvas.height/2;
+					}
+				}
+			}
+		}
+
+		function prepare()
+		{
+			world.prepare();
+			players[0] = new bar(50,world.canvas.height/2, true);
+			players[1] = new bar(world.canvas.width - 50, world.canvas.height/2, false);
+			var speedx = 0;
+			var speedy = 0;
+			if(Math.round(Math.random()) == 1)
+			{
+				speedx = -5;
+			}
+			else
+			{
+				speedx = 5;
+			}
+			if(Math.round(Math.random()) == 1)
+			{
+				speedy = -5;
+			}
+			else
+			{
+				speedy = 5;
+			}
+			ball = new ball(world.canvas.width/2,world.canvas.height/2, speedx, speedy);
+			updateGame();
+		}
+
+		function updateGame()
+		{
+			world.clear();
+			ball.update();
+			for(var i = 0;i < players.length;i++)
+			{
+				players[i].update();
+			}
+		}
+
+		function setMode(m)
+		{
+			mode = m;
+			var modeButtons = document.getElementsByClassName("mode");
+			for(var i = 0;i < modeButtons.length;i++)
+			{
+				modeButtons[i].style.display = "none";
+			}
+			document.getElementById("start").style.display = "inline";
+		}
+
+		function startGame()
+		{
+			document.getElementById("start").style.display = "none";
+			ball.active = true;
+			world.start();
+		}
+
+		prepare();
+	</script>
+</body>
+</html>

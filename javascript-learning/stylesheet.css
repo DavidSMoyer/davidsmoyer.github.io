@@ -1,0 +1,53 @@
+﻿body
+{
+	text-align: center;
+	font-family: Calibri;
+}
+
+a:link, a:visited
+{
+	background-color: black;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+}
+
+nav a
+{
+	margin: 10px;
+}
+
+a:hover
+{
+	background-color: gray;
+}
+
+h1
+{
+	text-decoration: underline;
+}
+
+button
+{
+	background-color: black;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-style: none;
+}
+
+button:hover
+{
+	background-color: gray;
+	cursor: pointer;
+}
+
+.hidden
+{
+	display: none;
+}
+
+.hide
+{
+	color: white;
+}

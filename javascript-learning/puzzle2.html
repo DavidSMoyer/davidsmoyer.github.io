@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Level 2</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+</head>
+<body>
+	<h1>
+		Puzzle #2
+	</h1>
+	<br/><br/><br/>
+	<input type="text" placeholder="156234" id="answer"/><br/>
+	<button class="submit" onclick="answer()">Submit</button>
+	<br/><br/><br/>
+	<a href="puzzle3.html" class="hidden">Next</a>
+	<br/><br/><br/>
+	<a href="index.html">Home</a>
+	<br/><br/><br/><br/>
+	<h2>1 - Number of Letters in <u>The Alphabet</u></h2>
+	<h2 class="hide" style="display:inline">Okay you found me, 6 is 4 - 12
+	<h2>3 - What's at the end of a rainbow?</h2>
+	<h2> 5 - What occurs every second, moment, and hour, but never in a year?</h2>
+	<h2>4 - Solve
+	<h3>x + x + x = 15<br/>
+		x + y = 7<br/>
+		z + y = 18<br/>
+		x - y + z =
+	</h3>
+	<h2>2 - I am the beginning of the end, and the end of time and space. I am essential to creation, and I surround every place. What am I?</h2>
+	
+
+	<script>
+		var text = document.getElementById("answer");
+		var next = document.getElementsByClassName("hidden")[0]
+
+		function answer()
+		{
+			if(text.value == "9o7ew19")
+			{
+				next.style.display = "inline";
+			}
+		}
+	</script>
+</body>
+</html>

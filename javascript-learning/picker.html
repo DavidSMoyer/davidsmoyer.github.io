@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Colour Picker</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	<style>
+		.slider
+		{
+			-webkit-appearance: none;
+			appearance: none;
+			border-color: black;
+			border-style: solid;
+			width: 200px;
+		}
+
+		#red
+		{
+			background-color: #FF0000;
+		}
+
+		#blue
+		{
+			background-color: #0000FF;
+		}
+
+		#green
+		{
+			background-color: #00FF00;
+		}
+		
+		h2, h3
+		{
+			display: inline;
+			color: white;
+			-webkit-text-stroke: 0.5px black;
+
+		}
+	</style>
+</head>
+<body style="background-color: black">
+
+	<h3 class="opposite text">Red:</h3><br/>
+	<input type="range" min="0" max="255" value="0" class="slider" id="red"/><br/>
+	<h3 class="opposite text">Green:</h3><br/>
+	<input type="range" min="0" max="255" value="0" class="slider" id="green"/><br/>
+	<h3 class="opposite text">Blue:</h3><br/>
+	<input type="range" min="0" max="255" value="0" class="slider" id="blue"/><br/>
+	<h2 class="text" id="red-text">0 &nbsp;</h2><h2 id="green-text" class="text">0 </h2><h2 id="blue-text" class="text">0</h2><br/>
+	<h3 class="text" id="hex">#000000</h3><br/><br/>
+	<a href="index.html">Home</a>
+	<button onclick="randomColour()">Random Colour</button>
+
+	<script>
+		var slider = [document.getElementById("red"), document.getElementById("green"), document.getElementById("blue")];
+		var text = [document.getElementById("red-text"), document.getElementById("green-text"), document.getElementById("blue-text")];
+
+		slider[0].oninput = function()
+		{
+			text[0].innerHTML = this.value + " ";
+			updateBackground();
+		}
+
+		slider[1].oninput = function()
+		{
+			text[1].innerHTML = this.value + " ";
+			updateBackground();
+		}
+
+		slider[2].oninput = function()
+		{
+			text[2].innerHTML = this.value + " ";
+			updateBackground();
+		}
+
+		function updateBackground()
+		{
+			var colour = [];
+			for(var i = 0;i < slider.length;i++)
+			{
+				colour[i] = slider[i].value;
+			}
+			document.body.style.backgroundColor = "rgba(" + colour[0] + ", " + colour[1] + ", " + colour[2] + ")";
+			var textcolour = document.getElementsByClassName("text");
+			for(var i = 0;i < textcolour.length;i++)
+			{
+				textcolour[i].style.color = "rgba(" + (255-colour[0]) + ", " + (255-colour[1]) + ", " + (255-colour[2]) + ")";
+			}
+			document.getElementById("hex").innerHTML = "#" + toHexidecimal(colour[0]) + toHexidecimal(colour[1]) + toHexidecimal(colour[2]);
+		}
+
+		function toHexidecimal(value)
+		{
+			value = parseInt(value, 10).toString(16);
+			if(value.length == 1)
+			{
+				value = "0" + value;
+			}
+			return value;
+		}
+
+		function randomColour()
+		{
+			var colour = [];
+			colour[0] = Math.round(Math.random() * 255);
+			colour[1] = Math.round(Math.random() * 255);
+			colour[2] = Math.round(Math.random() * 255);
+
+			slider[0].value = colour[0];
+			text[0].innerHTML = colour[0] + " ";
+			slider[1].value = colour[1];
+			text[1].innerHTML = colour[1] + " ";
+			slider[2].value = colour[2];
+			text[2].innerHTML = colour[2] + " ";
+
+			updateBackground();
+		}
+	</script>
+</body>
+</html>

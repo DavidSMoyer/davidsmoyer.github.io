@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dodging Game</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+</head>
+<body style="background-color: black">
+
+	<canvas id="game" width="480px" height="270px" style="border:2px solid white"></canvas>
+	<br/><br/><button onclick="setup()">Restart</button>
+	<br><br/><a href="index.html">Home</a>
+
+	<script>
+		var player;
+		var obstacles = new Array();
+		var lost = false;
+
+		function setup()
+		{
+			clearInterval(world.interval);
+			world.start();
+			obstacles = [];
+			lost = false;
+			player = new component(240, 135, "red", 10, 10);
+			createObstacle();
+		}
+
+		var world = {
+			canvas : document.getElementById("game"),
+			start : function() {
+				this.points = 0;
+				this.canvas.width = 480;
+				this.canvas.height = 270;
+				this.context = this.canvas.getContext("2d");
+				this.interval = setInterval(updateWorld, 20);
+				this.frame = 0;
+				window.addEventListener('keydown', function(e)
+				{
+					world.keys = (world.keys || []);
+					world.keys[e.keyCode] = e.keyCode;
+				})
+				window.addEventListener('keyup', function(e)
+				{
+					world.keys[e.keyCode] = false;
+				})
+			},
+			clear : function()
+			{
+				this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+			},
+			printScore : function()
+			{
+				world.context.font = "30px Helvetica";
+				world.context.fillStyle = "#FFFFFF";
+				world.context.fillText(world.points, 240, 30);
+			}
+		}
+
+		function component(x, y, color, width, height)
+		{
+			this.width = width;
+			this.height = height;
+			this.x = x;
+			this.y = y;
+			this.moveY = 1;
+			this.moveX = 1;
+			this.update = function()
+			{
+				ctx = world.context;
+				ctx.fillStyle = color;
+				ctx.fillRect(this.x - (this.width/2), this.y - (this.height/2), this.width, this.height);
+			}
+		}
+
+		function obstacle(direction, gapPos, gapSize)
+		{
+			this.passed = false;
+			console.log(direction);
+			this.gapPos = gapPos;
+			this.gapSize = gapSize;
+			this.direction = direction;
+			this.color = "#00AA00";
+			if(this.direction == 0)
+			{
+				this.y = 135;
+				this.x = -5;
+				this.yspeed = 0;
+				this.xspeed = Math.random() + 0.75;
+			}
+			else if (this.direction == 1)
+			{
+				this.y = 135;
+				this.x = 485;
+				this.yspeed = 0;
+				this.xspeed = (Math.random() + 0.75) * -1;
+			}
+			else if (this.direction == 2)
+			{
+				this.y = -5;
+				this.x = 140;
+				this.yspeed = Math.random() + 0.75;
+				this.xspeed = 0;
+			}
+			else
+			{
+				this.y = 275;
+				this.x = 140;
+				this.xspeed = 0;
+				this.yspeed = (Math.random() + 0.75) * -1;
+			}
+			this.update = function()
+			{
+				this.moveObject();
+				ctx = world.context;
+				ctx.fillStyle = this.color;
+				if(direction <= 1)
+				{
+					ctx.fillRect(this.x-5, 0, 10, this.gapPos - (this.gapSize/2));
+					ctx.fillRect(this.x-5, this.gapPos + (this.gapSize/2), 10, 270 - (this.gapPos + (this.gapSize/2)));
+				}
+				else
+				{
+					ctx.fillRect(0, this.y-5, this.gapPos - (this.gapSize/2), 10);
+					ctx.fillRect(this.gapPos + (this.gapSize/2), this.y-5, 480 - (this.gapPos + (this.gapSize/2)), 10);
+				}
+				this.collide();
+			},
+			this.moveObject = function()
+			{
+				this.x += this.xspeed;
+				this.y += this.yspeed;
+			},
+			this.collide = function()
+			{
+				if(direction == 0 && player.x < this.x && this.passed == false)
+				{
+					world.points++;
+					this.color = "#005500";
+					this.passed = true;
+				}
+				if(direction == 1 && player.x > this.x && this.passed == false)
+				{
+					world.points++;
+					this.color = "#005500";
+					this.passed = true;
+				}
+				if(direction == 2 && player.y < this.y && this.passed == false)
+				{
+					world.points++;
+					this.color = "#005500";
+					this.passed = true;
+				}
+				if(direction == 3 && player.y > this.y && this.passed == false)
+				{
+					world.points++;
+					this.color = "#005500";
+					this.passed = true;
+				}
+				if(direction <= 1)
+				{
+					if(this.x - 5 <= player.x + (player.width/2) && this.x + 5 >= player.x - (player.width/2))
+					{
+						if(player.y + (player.height/2) > this.gapPos + (this.gapSize/2) || player.y - (player.height/2) <= this.gapPos - (this.gapSize/2))
+						{
+							lose();
+						}
+					}
+				}
+				else
+				{
+					if(this.y - 5 <= player.y + (player.height/2) && this.y + 5 >= player.y - (player.height/2))
+					{
+						if(player.x + (player.width/2) > this.gapPos + (this.gapSize/2) || player.x - (player.width/2) <= this.gapPos - (this.gapSize/2))
+						{
+							lose();
+						}
+					}
+				}
+			}
+		}
+
+		function updateWorld()
+		{
+			world.clear();
+			movePlayer();
+			player.update();
+			for(var i = 0;i < obstacles.length;i++)
+			{
+				obstacles[i].update();
+			}
+			if(lost == true)
+			{
+				return;
+			}
+			world.printScore();
+			world.frame++;
+			if(world.frame == 50)
+			{
+				world.frame = 0;
+				createObstacle();
+			}
+		}
+
+		function movePlayer()
+		{
+			if (world.keys && world.keys[37]) 
+			{
+				player.x += -2.5;
+				if(player.x - (player.width/2) <= 0)
+				{
+					player.x = player.width/2;
+				}
+			}
+			if (world.keys && world.keys[38]) 
+			{
+				player.y += -2.5;
+				if(player.y - (player.height/2) <= 0)
+				{
+					player.y = player.height/2;
+				}
+			}
+			if (world.keys && world.keys[39]) 
+			{
+				player.x += 2.5;
+				if(player.x + (player.width/2) >= 480)
+				{
+					player.x = 480 - (player.width/2);
+				}
+			}
+			if (world.keys && world.keys[40]) 
+			{
+				player.y += 2.5;
+				if(player.y + (player.height/2) >= 270)
+				{
+					player.y = 270 - (player.height/2);
+				}
+			}
+		}
+
+		function createObstacle()
+		{
+			if(Math.round(Math.random()) == 1)
+			{
+				obstacles.push(new obstacle(Math.round(Math.random()), Math.random() * 150 + 75, Math.random() * 100 + 50));
+			}
+			else
+			{
+				obstacles.push(new obstacle(Math.round(Math.random()) + 2, Math.random() * 150 + 75, Math.random() * 100 + 50));
+			}
+		}
+
+		function lose()
+		{
+			clearInterval(world.interval);
+			world.clear();
+			player = null;
+			obstacles = [];
+			lost = true;
+			world.context.fillStyle = "#FFFFFF";
+			world.context.font = "30px Impact";
+			world.context.fillText("You lost!", 190, 135);
+			world.context.font = "20px Impact";
+			world.context.fillText("You got " + world.points + " point(s).", 170, 165);
+		}
+
+		setup();
+	</script>
+</body>
+</html>
