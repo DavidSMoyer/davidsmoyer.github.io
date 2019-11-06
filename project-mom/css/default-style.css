@@ -141,7 +141,6 @@ nav a:link, nav a:visited
 {
 	color: black;
 	text-decoration: none;
-	display: inline-block;
 	transition-duration: 0.25s;
 	-moz-transition-duration: 0.25s;
 	-webkit-transition-duration: 0.25s;
@@ -152,6 +151,11 @@ nav a:link, nav a:visited
 nav #drop-down a
 {
 	display: block;
+	transition-duration: 0.25s;
+	-moz-transition-duration: 0.25s;
+	-webkit-transition-duration: 0.25s;
+	-o-transition-duration: 0.25s;
+	-ms-transition-duration: 0.25s;
 }
 
 footer
@@ -309,7 +313,7 @@ div.product img
 	{
 		display: block;
 		text-align: center;
-		width: calc(100% - 16vw);
+		width: 90%;
 		height: 150vh;
 		margin: 0 auto;
 	}
@@ -318,6 +322,7 @@ div.product img
 	{
 		background-repeat: repeat-y;
 		background-size: 100% 20%;
+		margin: 0;
 	}
 
 	div.product img
@@ -347,5 +352,37 @@ div.product img
 	#pageImage p
 	{
 		font-size: 5vh;
+	}
+
+	nav
+	{
+		position: static;
+	}
+
+	nav a
+	{
+		display: block;
+	}
+
+	nav span
+	{
+		display: block;
+	}
+
+	nav #drop-button
+	{
+		display: block;
+	}
+
+	nav #drop-down
+	{
+		width: 100%;
+		position: static;
+		background-color: white;
+	}
+
+	footer
+	{
+		width: 100%;
 	}
 }
