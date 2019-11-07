@@ -5,7 +5,7 @@
   -o-transition: none !important;
  }
 
-body.body
+body
 {
 	background-color: orange;
 	background-image: url("../images/background.jpg");
@@ -230,7 +230,11 @@ div.product
 
 div.product:hover
 {
-	transform: scale(1.1,1.1);
+	transform: scale(1.05,1.05);
+	-webkit-transform: scale(1.05,1.05);
+	-o-transform: scale(1.05,1.05);
+	-moz-transform: scale(1.05,1.05);
+	-ms-transform: scale(1.05,1.05);
 }
 
 div.product img
@@ -315,10 +319,15 @@ div.product img
 		text-align: center;
 		width: 90%;
 		height: 150vh;
-		margin: 0 auto;
+		margin: 1vh auto;
 	}
 
-	body.body
+	nav a, nav span, nav div
+	{
+		font-size: 3vh;
+	}
+
+	body
 	{
 		background-repeat: repeat-y;
 		background-size: 100% 20%;
@@ -332,7 +341,7 @@ div.product img
 
 	div.product p
 	{
-		font-size: 15vh;
+		font-size: 15vw;
 		display: inline-block;
 		margin-top: 0;
 	}
@@ -344,14 +353,14 @@ div.product img
 
 	#pageImage h1
 	{
-		font-size: 15vh;
+		font-size: 5vw;
 		margin: 0;
 		margin-top: 2vh;
 	}
 
 	#pageImage p
 	{
-		font-size: 5vh;
+		font-size: 3vw;
 	}
 
 	nav
