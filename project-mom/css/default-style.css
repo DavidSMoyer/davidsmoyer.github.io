@@ -311,7 +311,7 @@ div.product img
 }
 
 /* Responsive Web Design */
-@media screen and (max-width: 900px)
+@media screen and (max-width: 600px)
 {
 	div.product
 	{
@@ -331,7 +331,12 @@ div.product img
 	{
 		background-repeat: repeat-y;
 		background-size: 100% 20%;
-		margin: 0;
+		margin: 0 2.5vw;
+		opacity: 1;
+		-webkit-opacity: 1;
+		-moz-opacity: 1;
+		-ms-opacity: 1;
+		-o-opacity: 1;
 	}
 
 	div.product img
