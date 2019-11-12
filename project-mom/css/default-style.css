@@ -8,20 +8,15 @@
 body
 {
 	background-color: #3D0352;
-	background-image: url("../images/background.jpg");
+	background-image: url("../images/general/background.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	margin: 0 10vw;
-	animation: fadein 1s ease-in-out forwards;
-	-webkit-animation: fadein 1s ease-in-out forwards;
-	-moz-animation: fadein 1s ease-in-out forwards;
-	-o-animation: fadein 1s ease-in-out forwards;
-	-ms-animation: fadein 1s ease-in-out forwards;
-	opacity: 0;
-	-webkit-opacity: 0;
-	-moz-opacity: 0;
-	-o-opacity: 0;
-	-ms-opacity: 0;
+	animation: fadein 1.5s ease-in-out;
+	-webkit-animation: fadein 1s ease-in-out;
+	-moz-animation: fadein 1s ease-in-out;
+	-o-animation: fadein 1s ease-in-out;
+	-ms-animation: fadein 1s ease-in-out;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -203,6 +198,16 @@ nav a:hover, nav a:focus
 	-moz-animation: fadein 0.5s ease-in-out 1s forwards;
 	-o-animation: fadein 0.5s ease-in-out 1s forwards;
 	-ms-animation: fadein 0.5s ease-in-out 1s forwards;
+}
+
+#pageImage h1
+{
+	font-size: 3.5vw;
+}
+
+#pageImage p
+{
+	font-size: 2.5vw;
 }
 
 div.product
@@ -399,5 +404,15 @@ div.product img
 	footer
 	{
 		width: 100%;
+	}
+
+	footer p
+	{
+		font-size: 3vw;
+	}
+
+	main
+	{
+		padding: 0 2vw;
 	}
 }
