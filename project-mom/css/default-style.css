@@ -322,9 +322,9 @@ div.product img
 	{
 		display: block;
 		text-align: center;
-		width: 90%;
-		height: 150vh;
-		margin: 1vh auto;
+		width: 80%;
+		height: 100vh;
+		margin: 2vh auto;
 	}
 
 	nav a, nav span, nav div
@@ -351,7 +351,7 @@ div.product img
 
 	div.product p
 	{
-		font-size: 10vw;
+		font-size: 7vw;
 		display: inline-block;
 		margin-top: 0;
 	}
@@ -406,13 +406,15 @@ div.product img
 		width: 100%;
 	}
 
-	footer p
-	{
-		font-size: 3vw;
-	}
-
 	main
 	{
 		padding: 0 2vw;
+		padding-bottom: 10vh;
+	}
+
+	main p
+	{
+		margin: 5vh auto;
+		font-size: 3vh;
 	}
 }

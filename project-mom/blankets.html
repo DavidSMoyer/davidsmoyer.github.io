@@ -21,37 +21,55 @@
 <!-- The navigation bar -->
 <nav>
 	<a href="index.html">Home</a>
-	<div id="drop-button">
-		Products
+	<div id="drop-button" class="active">
+		<span>Products</span>
 		<div id="drop-down">
-			<a href="hats.html">Hats</a>
+			<a href="hats.html">Hats</span>
 			<a href="scarves.html">Scarves</a>
 			<a href="stockings.html">Stockings</a>
 			<a href="animals.html">Stuffed Animals</a>
-			<a href="blankets.html">Blankets</a>
+			<span id="active">Blankets</span>
 		</div>
 	</div>
-	<span id="active">About</span>
+	<a href="about.html">About</a>
 	<a href="contact.html">Get in Contact</a>
 </nav>
 
 <!-- The main portion of the webpage -->
 <main>
 	<!-- The title for the page -->
-	<div id="pageImage" style="background-image: url('images/general/about.png'); background-size: 100% 100%;">
+	<div id="pageImage" style="background-image: url('images/blankets/title.jpeg'); background-size: 100% 100%;">
 		<div>
-			<h1>About</h1>
-			<p>Here you can find information about us.</p>
+			<h1>Blankets</h1>
+			<p>Three types of blankets are available for purchase. You can get a small one for 10$, a larger one for 15$, or a knitted one for 40$.</p>
+		</div>
+	</div>
+	
+	<!-- Contains all of the products -->
+	<div style="margin-top: 3vh">
+
+		<!-- Small Blanket -->
+		<div class="product">
+			<img src="images/blankets/small.jpeg"/>
+			<p>Small Blanket</p>
+		</div>
+
+		<!-- Blanket -->
+		<div class="product">
+			<img src="images/blankets/medium.jpeg"/>
+			<p>Blanket</p>
+		</div>
+
+		<!-- Knitted Blanket -->
+		<div class="product">
+			<img src="images/blankets/knitted.jpeg"/>
+			<p>Knitted Blanket</p>
 		</div>
 	</div>
 
-	<!-- Page Message -->
-	<div>
-		<p>
-			All the crafts that you can find on this website are the result of Crystal Moyer. They're homemade with yarn, felt, and other materials that you can find at a local craft store.<br/>
-			The website you are viewing was designed by David Moyer, a student enrolled in Pembina Trails Early College.<br/>
-		</p>
-	</div>
+	<p>
+		Feel free to request whatever design or colours you want!
+	</p>
 </main>
 
 <!-- The footer of the page -->
