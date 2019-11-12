@@ -358,7 +358,7 @@ div.product img
 
 	#pageImage
 	{
-		padding: 0.5vw;
+		padding: 2vw;
 		width: calc(100% - 4vw);
 	}
 
@@ -372,6 +372,13 @@ div.product img
 	#pageImage p
 	{
 		font-size: 5vw;
+	}
+
+	#pageImage div
+	{
+		padding: 5vh;
+		height: calc(100% - 10vh);
+		width: calc(100% - 10vh);
 	}
 
 	nav
@@ -404,6 +411,11 @@ div.product img
 	footer
 	{
 		width: 100%;
+	}
+
+	footer p
+	{
+		font-size: 4vw;
 	}
 
 	main
