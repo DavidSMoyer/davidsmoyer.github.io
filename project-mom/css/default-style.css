@@ -62,7 +62,7 @@ header h1
 	font-family: "Courier", palatino, serif;
 	text-decoration: underline;
 	font-size: 10vh;
-	display: inline;
+	display: inline-block;
 }
 
 nav
@@ -77,6 +77,7 @@ nav
 
 nav #drop-button
 {
+	font-size: 4vh;
 	cursor: default;
 	display: inline-block;
 	position: relative;
@@ -132,15 +133,28 @@ nav #drop-button:hover #drop-down, nav #drop-button:focus #drop-down
 	display: block;
 }
 
-nav a:link, nav a:visited
+nav a
 {
-	color: black;
-	text-decoration: none;
 	transition-duration: 0.25s;
 	-moz-transition-duration: 0.25s;
 	-webkit-transition-duration: 0.25s;
 	-o-transition-duration: 0.25s;
 	-ms-transition-duration: 0.25s;
+	display: inline-block;
+}
+
+nav a:link, nav a:visited
+{
+	color: black;
+	text-decoration: none;
+}
+
+nav a:hover, nav a:focus
+{
+	color: #a051c4;
+	cursor: pointer;
+	text-decoration: underline;
+	transform: translateY(-0.25vh);
 }
 
 nav #drop-down a
@@ -168,15 +182,6 @@ footer p
 	font-size: 3.5vh;
 }
 
-nav a:hover, nav a:focus
-{
-	color: #a051c4;
-	cursor: pointer;
-	text-decoration: underline;
-	transform: translateY(-0.25vh);
-}
-
-
 #pageImage
 {
 	width: 100%;
@@ -203,11 +208,21 @@ nav a:hover, nav a:focus
 #pageImage h1
 {
 	font-size: 3.5vw;
+	animation: spiny 2.5s ease-in-out;
+	-webkit-animation: spiny 2.5s ease-in-out;
+	-moz-animation: spiny 2.5s ease-in-out;
+	-ms-animation: spiny 2.5s ease-in-out;
+	-o-animation: spiny 2.5s ease-in-out;
 }
 
 #pageImage p
 {
 	font-size: 2.5vw;
+	animation: spiny 3s ease-in-out;
+	-webkit-animation: spiny 3s ease-in-out;
+	-moz-animation: spiny 3s ease-in-out;
+	-ms-animation: spiny 3s ease-in-out;
+	-o-animation: spiny 3s ease-in-out;
 }
 
 div.product
@@ -315,6 +330,96 @@ div.product img
 	}
 }
 
+@keyframes spiny
+{
+	0%
+	{
+		transform: rotateY(90deg);
+	}
+
+	50%
+	{
+		transform: rotateY(90deg);
+	}
+
+	100%
+	{
+		transform: rotateY(0deg);
+	}
+}
+
+@-webkit-keyframes spiny
+{
+	0%
+	{
+		transform: rotateY(90deg);
+	}
+
+	50%
+	{
+		transform: rotateY(90deg);
+	}
+
+	100%
+	{
+		transform: rotateY(0deg);
+	}
+}
+
+@-o-keyframes spiny
+{
+	0%
+	{
+		transform: rotateY(90deg);
+	}
+
+	50%
+	{
+		transform: rotateY(90deg);
+	}
+
+	100%
+	{
+		transform: rotateY(0deg);
+	}
+}
+
+@-moz-keyframes spiny
+{
+	0%
+	{
+		transform: rotateY(90deg);
+	}
+
+	50%
+	{
+		transform: rotateY(90deg);
+	}
+
+	100%
+	{
+		transform: rotateY(0deg);
+	}
+}
+
+@-ms-keyframes spiny
+{
+	0%
+	{
+		transform: rotateY(90deg);
+	}
+
+	50%
+	{
+		transform: rotateY(90deg);
+	}
+
+	100%
+	{
+		transform: rotateY(0deg);
+	}
+}
+
 /* Responsive Web Design */
 @media screen and (max-width: 600px)
 {
@@ -389,6 +494,7 @@ div.product img
 	nav a
 	{
 		display: block;
+		font-size: 3vh;
 	}
 
 	nav span
@@ -399,6 +505,7 @@ div.product img
 	nav #drop-button
 	{
 		display: block;
+		font-size: 3vh;
 	}
 
 	nav #drop-down
@@ -406,6 +513,7 @@ div.product img
 		width: 100%;
 		position: static;
 		background-color: white;
+		padding-bottom: 0;
 	}
 
 	footer
