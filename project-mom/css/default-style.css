@@ -428,7 +428,7 @@ div.product img
 		display: block;
 		text-align: center;
 		width: 80%;
-		height: 100vh;
+		height: 90vh;
 		margin: 2vh auto;
 	}
 
@@ -481,9 +481,9 @@ div.product img
 
 	#pageImage div
 	{
-		padding: 5vh;
-		height: calc(100% - 10vh);
-		width: calc(100% - 10vh);
+		padding: 5vw;
+		height: calc(100% - 10vw);
+		width: calc(100% - 10vw);
 	}
 
 	nav
