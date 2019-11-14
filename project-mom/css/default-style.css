@@ -1,4 +1,6 @@
-﻿.preload * {
+﻿
+/* Prevents any transitions from playing before the page loads */
+.preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -ms-transition: none !important;
@@ -523,7 +525,7 @@ div.product img
 
 	footer p
 	{
-		font-size: 4vw;
+		font-size: 6vw;
 	}
 
 	main
