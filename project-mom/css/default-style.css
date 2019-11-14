@@ -177,6 +177,8 @@ footer
 	width: calc(100% - 20vw);
 	height: 10vh;
 	text-align: center;
+	overflow: hidden;
+	
 }
 
 footer p
@@ -516,11 +518,6 @@ div.product img
 		position: static;
 		background-color: white;
 		padding: 10vw 0;
-	}
-
-	footer p
-	{
-		font-size: 5vw;
 	}
 
 	main
