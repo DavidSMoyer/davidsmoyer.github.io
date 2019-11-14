@@ -513,7 +513,7 @@ div.product img
 		width: 100%;
 		position: static;
 		background-color: white;
-		padding-bottom: 0;
+		padding: 10vw 0;
 	}
 
 	footer
