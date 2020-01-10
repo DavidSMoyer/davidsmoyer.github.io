@@ -192,6 +192,31 @@ table {
     color: $sec-col;
 }
 
+#game-display {
+    width: calc(100% - 10vw);
+    margin: 0 5vw;
+    border: 0.25vw $sec-col solid;
+    height: 100vh;
+    display: grid;
+    grid-gap: 1vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, 200px);
+    padding: 1vw;
+
+    .game {
+        transition-duration: 0.5s;
+        border: $sec-col 0.25vw solid;
+
+        img {
+            width: 100%;
+        }
+
+        &:hover, &:focus {
+            transform: scale(1.1,1.1);
+        }
+    }
+}
+
 
 @media only screen and (max-width: 768px) {
 
@@ -254,6 +279,11 @@ table {
     label, input, select
     {
         display: block;
+    }
+
+    #game-display {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto-fill, 200px);
     }
 }
 

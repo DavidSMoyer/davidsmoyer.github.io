@@ -112,6 +112,24 @@ table {
 .required {
   color: #ff0000; }
 
+#game-display {
+  width: calc(100% - 10vw);
+  margin: 0 5vw;
+  border: 0.25vw #ff0000 solid;
+  height: 100vh;
+  display: grid;
+  grid-gap: 1vw;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, 200px);
+  padding: 1vw; }
+  #game-display .game {
+    transition-duration: 0.5s;
+    border: #ff0000 0.25vw solid; }
+    #game-display .game img {
+      width: 100%; }
+    #game-display .game:hover, #game-display .game:focus {
+      transform: scale(1.1, 1.1); }
+
 @media only screen and (max-width: 768px) {
   h1, h2, h3, h4, h5, h6 {
     font-size: 5vw; }
@@ -130,7 +148,10 @@ table {
   form {
     text-align: left; }
   label, input, select {
-    display: block; } }
+    display: block; }
+  #game-display {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, 200px); } }
 
 @-webkit-keyframes fadeIn {
   0% {
