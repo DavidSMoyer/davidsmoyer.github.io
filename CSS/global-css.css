@@ -1,0 +1,186 @@
+/* Create Mixins to be used later */
+/* Creates the keyframes for an animation */
+/* Calls an animation */
+/* Initialie variables for easy use */
+html {
+  scroll-behavior: smooth; }
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Calibri, Verdana, Sans-Serif;
+  text-align: center;
+  font-size: 1vw; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ff0000;
+  font-family: Impact, Bookman, Sans-Serif;
+  letter-spacing: 0.1vw;
+  font-size: 1.5vw; }
+
+a {
+  color: #ff0000;
+  text-decoration: none; }
+
+header {
+  width: calc(100% - 6vw);
+  margin: 0 3vw; }
+  header nav {
+    display: flex;
+    display: -ms-flexbox;
+    background-color: maroon; }
+    header nav a {
+      flex: 1;
+      text-align: center;
+      color: black;
+      text-decoration: none;
+      font-size: 2.5vw;
+      border: black solid 0.25vw; }
+      header nav a:hover, header nav a:focus {
+        background-color: #ff0000; }
+
+#slideshow-container {
+  border: 0.5vw #ff0000 solid;
+  height: 75vh; }
+
+.slide {
+  -webkit-animation: fadeIn 1s 1;
+  -moz-animation: fadeIn 1s 1;
+  -o-animation: fadeIn 1s 1;
+  -ms-animation: fadeIn 1s 1;
+  animation: fadeIn 1s 1;
+  width: 100%;
+  margin: 0; }
+  .slide img {
+    width: 100%;
+    height: 70vh; }
+
+.dot {
+  width: 0.5vw;
+  height: 0.5vh;
+  border: #ff0000 0.5vw solid;
+  border-radius: 50%;
+  font-size: 0.5vh;
+  margin: 1vh;
+  padding: 0.1vw;
+  background-color: #ff0000;
+  cursor: pointer; }
+  .dot.active {
+    border-color: white;
+    background-color: white; }
+
+#active {
+  background-color: #ff0000; }
+
+.drop-down {
+  border: 0.25vw black solid;
+  cursor: pointer;
+  border-collapse: collapse;
+  background-color: #b30000; }
+  .drop-down h2 {
+    color: black; }
+
+.drop-down2 {
+  border: 0.25vw #b30000 solid;
+  border-collapse: collapse;
+  -webkit-animation: fadeIn 1s 1;
+  -moz-animation: fadeIn 1s 1;
+  -o-animation: fadeIn 1s 1;
+  -ms-animation: fadeIn 1s 1;
+  animation: fadeIn 1s 1; }
+
+table {
+  border: 0.25vw #ff0000 solid;
+  border-collapse: collapse; }
+  table th {
+    background-color: #ff0000;
+    color: black;
+    font-weight: bolder;
+    padding: 1vw;
+    border-collapse: collapse;
+    font-family: Impact, Bookman, Sans-Serif;
+    border: 0.1vw black solid; }
+  table td {
+    text-align: center;
+    border: 0.1vw #ff0000 solid;
+    padding: 0.5vw;
+    border-collapse: collapse; }
+  table tr {
+    border: 0.1vw #ff0000 solid;
+    border-collapse: collapse; }
+
+.required {
+  color: #ff0000; }
+
+#game-display {
+  width: calc(100% - 10vw);
+  margin: 0 5vw;
+  border: 0.25vw #ff0000 solid;
+  height: 100vh;
+  display: grid;
+  grid-gap: 1vw;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, 200px);
+  padding: 1vw;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  #game-display .game {
+    transition-duration: 0.5s;
+    border: #ff0000 0.25vw solid; }
+    #game-display .game img {
+      width: 100%; }
+    #game-display .game:hover, #game-display .game:focus {
+      transform: scale(1.1, 1.1); }
+
+@media only screen and (max-device-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 20vw; }
+  body {
+    font-size: 10vw; }
+  .slide img {
+    height: 55vh; }
+  .dot {
+    border-width: 2vw; }
+  header nav a {
+    font-size: 4vw; }
+  table tr td {
+    font-size: 3vw; }
+  table tr th {
+    font-size: 3.5vw; }
+  form {
+    text-align: left; }
+  label, input, select {
+    display: block; }
+  #game-display {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, 175px); } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
