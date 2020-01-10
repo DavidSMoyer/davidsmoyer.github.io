@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="../CSS/global-css.css" />
+    <meta charset="utf-8" />
+    <title>Ctrl V</title>
+</head>
+<body>
+    <!-- The Header/Nav Bar of the Page -->
+    <header id="top">
+        <center>
+            <img src="../Images/ctrl-v-logo.png" id="logo" />
+        </center>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="">Locations</a>
+            <a id="active">Games</a>
+            <a href="">Contact Us</a>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Search our vast collection of games!</h1>
+        <p>We have a variety of games for you to choose from. Just go ahead and start typing and you'll see if we have the games you're looking for!</p>
+
+        <div id="game-display">
+
+        </div>
+    </main>
+    
+
+
+
+
+    <script>
+        // Initializes the variables for the slideshow
+        var slides = document.getElementsByClassName("slide");
+        var slideDots = document.getElementsByClassName("dot");
+        var slideIndex = 0;
+        var interval = setInterval(addSlide, 10000, 1);
+        setSlide(0);
+
+        // Initializes the drop down menus
+        var dropDown = document.getElementsByClassName("drop-down");
+        var dropDown2 = document.getElementsByClassName("drop-down2");
+        var dropDownBool = [];
+        for (let i = 0; i < dropDown.length; i++) {
+            dropDownBool[i] = false;
+        }
+        for (let i = 0; i < dropDown2.length; i++) {
+            dropDown2[i].style.display = "none";
+        }
+        var dropDownNames = ["Pricing", "Booking Calender", "Waiver"];
+        
+        // Modifies the slide show by a number of slides
+        function addSlide(num) {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slideDots[i].classList.remove("active");
+            }
+            slideIndex += num;
+            if (slideIndex <= -1) {
+                slideIndex = slides.length - 1;
+            }
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            slides[slideIndex].style.display = "block";
+            slideDots[slideIndex].classList.add("active");
+        }
+
+        // Sets the slide show to a specific slide
+        function setSlide(num) {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slideDots[i].classList.remove("active");
+            }
+            slideIndex = num;
+            slides[slideIndex].style.display = "block";
+            slideDots[slideIndex].classList.add("active");
+            resetTimer();
+        }
+
+        // Resets the slide show timer
+        function resetTimer() {
+            clearInterval(interval);
+            interval = setInterval(addSlide, 10000, 1);
+        }
+
+        // Toggles a drop down menu
+        function drop(id) {
+            if (dropDownBool[id] == false) {
+                dropDown[id].childNodes[1].innerHTML = "<span>-</span>&#160;&#160;&#160;" + dropDownNames[id];
+                dropDown2[id].style.display = "block";
+                dropDownBool[id] = true;
+            }
+            else {
+                dropDown[id].childNodes[1].innerHTML = "<span>+</span>&#160;&#160;&#160;" + dropDownNames[id];
+                dropDown2[id].style.display = "none";
+                dropDownBool[id] = false;
+            }
+        }
+    </script>
+</body>
+</html>
