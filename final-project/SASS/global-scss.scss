@@ -202,6 +202,8 @@ table {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto-fill, 200px);
     padding: 1vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     .game {
         transition-duration: 0.5s;
@@ -222,12 +224,12 @@ table {
 
     h1, h2, h3, h4, h5, h6
     {
-        font-size: 5vw;
+        font-size: 20vw;
     }
 
     body
     {
-        font-size: 3vw;
+        font-size: 10vw;
     }
 
     .slide
@@ -283,7 +285,7 @@ table {
 
     #game-display {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(auto-fill, 200px);
+        grid-template-rows: repeat(auto-fill, 175px);
     }
 }
 
