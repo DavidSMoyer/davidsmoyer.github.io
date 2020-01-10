@@ -132,7 +132,7 @@ table {
     #game-display .game:hover, #game-display .game:focus {
       transform: scale(1.1, 1.1); }
 
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 768px) {
   h1, h2, h3, h4, h5, h6 {
     font-size: 20vw; }
   body {
