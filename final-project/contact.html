@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="CSS/global-css.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8" />
+    <title>Ctrl V</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="icon" href="Images/ctrl-v-tab-logo.png">
+</head>
+<body>
+    <!-- The Header/Nav Bar of the Page -->
+    <header id="top">
+        <center>
+            <img src="Images/ctrl-v-logo.png" id="logo" />
+        </center>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="">Locations</a>
+            <a href="games.html">Games</a>
+            <a id="active">Contact Us</a>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Feel Free to Ask Questions!</h1>
+        <p>
+            If you'd like to ask us anything, just go ahead and fill out this form!
+        </p>
+        <form action="https://formspree.io/mqkpzoap" method="POST">
+            <label for="email">Email: </label><br/>
+            <input type="email" id="email" name="Email" placeholder="Your Email Address..." required /><br/><br/>
+            <label for="question">Your Question: </label><br/>
+            <textarea name="Question" id="question" cols="30" required rows="4" placeholder="Ask your question here..."></textarea><br/>
+            <input type="submit" />
+        </form>
+
+        <h1>Book a Session</h1>
+        <p>Fill out this form and we'll see if we can fit you in!</p>
+        <form action="https://formspree.io/mqkpzoap" method="POST">
+            <label>What would you like to book?</label><br />
+            <input type="radio" name="Booking Selection" checked value="Book Stations" /><label>Book Stations</label><br />
+            <input type="radio" name="Booking Selection" value="Private Event" /><label>Book Private Event</label><br /><br />
+            <div id="book-form">
+
+            </div>
+
+            <p id="cost"></p>
+
+            <label>How would you like to pay?</label><br />
+            <input type="radio" name="Payment Method" required value="Debit" /><label>Debit</label><br />
+            <input type="radio" name="Payment Method" required value="Credit" /><label>Credit</label><br />
+            <input type="radio" name="Payment Method" required value="Cash" /><label>Cash</label><br /><br />
+
+            <input type="submit" /><br />
+        </form>
+    </main>
+
+    <script>
+        var displayed = -1;
+        var radio = document.getElementsByName("Booking Selection");
+        var interval = setInterval(updateForm, 100);
+        var form = document.getElementById("book-form");
+        var cost = document.getElementById("cost");
+        var price = 0;
+        var date = new Date();
+
+        var extras = [document.getElementById("stations"), document.getElementById("party-room-div")];
+
+        function updateForm()
+        {
+            date = new Date();
+            price = 0;
+
+            if (displayed != 1 && radio[1].checked == true)
+            {
+                form.innerHTML = "<label>Interested in catering or alcohol?</label> <br /><input type='radio' name='Catering or Alcohol' value='Catering' /> <label>Catering</label> <br /><input type='radio' name='Catering or Alcohol' value='Alcohol' /> <label>Alcohol</label> <br /><input type='radio' name='Catering or Alcohol' value='Both' /> <label>Both</label> <br /><input type='radio' name='Catering or Alcohol' checked value='Niether' /> <label>Niether</label><p id='cat-msg'>We'll be in touch regarding catering and alcohol.</p>";
+                displayed = 1;
+                extras = [document.getElementById("cat-msg")];
+            }
+            else if (displayed != 0 && radio[0].checked == true)
+            {
+                form.innerHTML = "<label for='stations'>How many stations would you like to book? </label><select id='stations' name='# Of Stations'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option><option value='10'>10</option><option value='11'>11</option><option value='12'>12</option><option value='13'>13</option><option value='14'>14</option><option value='15'>15</option><option value='16'>16</option></select><br/><br/><div id='party-room-div'><label for='party-room'>Would you like to rent out the party room? </label><input type='checkbox' name='Party Room' /></div>";
+                displayed = 0;
+                extras = [document.getElementById("stations"), document.getElementById("party-room-div")];
+            }
+
+            if (displayed == 0) {
+
+                if (parseInt(extras[0].value) >= 10) {
+                    extras[1].style.display = "block";
+                }
+                else {
+                    extras[1].style.display = "none";
+                    extras[1].children[1].checked = false;
+                }
+
+                if (extras[1].children[1].checked == true) {
+                    price += 50.00;
+                }
+
+                if (date.getDay() == "Thursday") {
+                    price += 20;
+                }
+                else {
+                    price += 25.99 * parseInt(extras[0].value);
+                }
+
+                cost.innerHTML = "The cost will be " + price.toFixed(2) + "$";
+            }
+
+            if (displayed == 1) {
+                if (document.getElementsByName("Catering or Alcohol")[3].checked == false) {
+                    extras[0].style.display = "block";
+                }
+                else {
+                    extras[0].style.display = "none";
+                }
+
+                cost.innerHTML = "The cost will be 335.84$";
+            }
+        }
+    </script>
+</body>
+</html>
