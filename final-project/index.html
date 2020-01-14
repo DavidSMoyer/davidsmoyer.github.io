@@ -131,90 +131,7 @@
 
 
               <!-- Drop Down Menu 2 -->
-              <div class="drop-down" tabindex="5" id="drop2">
-                  <h2><span class="drop-down-symbol">+</span>&#160;&#160;&#160;Booking Calender</h2>
-              </div>
-              <div class="drop-down2">
-
-                  <!-- Booking Calender -->
-                  <center>
-                      <table>
-                          <tr>
-                              <th>
-                                  Sun
-                              </th>
-                              <th>
-                                  Mon
-                              </th>
-                              <th>
-                                  Tue
-                              </th>
-                              <th>
-                                  Wed
-                              </th>
-                              <th>
-                                  Thu
-                              </th>
-                              <th>
-                                  Fri
-                              </th>
-                              <th>
-                                  Sat
-                              </th>
-                          </tr>
-                          <tr>
-                              <td>1<br /</td>
-                              <td>2<br /></td>
-                              <td>3<br /></td>
-                              <td>4<br /></td>
-                              <td>5<br /></td>
-                              <td>6<br /></td>
-                              <td>7<br /></td>
-                          </tr>
-                          <tr>
-                              <td>8<br /></td>
-                              <td>9<br />Closed</td>
-                              <td>10<br />0% Booked</td>
-                              <td>11<br />0% Booked</td>
-                              <td>12<br />0% Booked</td>
-                              <td>13<br />0% Booked</td>
-                              <td>14<br />0% Booked</td>
-                          </tr>
-                          <tr>
-                              <td>15<br />0% Booked</td>
-                              <td>16<br />Closed</td>
-                              <td>17<br />0% Booked</td>
-                              <td>18<br />0% Booked</td>
-                              <td>19<br />0% Booked</td>
-                              <td>20<br />0% Booked</td>
-                              <td>21<br />0% Booked</td>
-                          </tr>
-                          <tr>
-                              <td>22<br />0% Booked</td>
-                              <td>23<br />Closed</td>
-                              <td>24<br />0% Booked</td>
-                              <td>25<br />0% Booked</td>
-                              <td>26<br />0% Booked</td>
-                              <td>27<br />0% Booked</td>
-                              <td>28<br />0% Booked</td>
-                          </tr>
-                          <tr>
-                              <td>29<br />0% Booked</td>
-                              <td>30<br />Closed</td>
-                              <td>31<br />0% Booked</td>
-                              <td>1</td>
-                              <td>2</td>
-                              <td>3</td>
-                              <td>4</td>
-                          </tr>
-                      </table>
-                  </center>
-                  <br /><br />
-              </div>
-
-
-              <!-- Drop Down Menu 3 -->
-              <div class="drop-down" tabindex="6" id="drop3">
+              <div class="drop-down" tabindex="6" id="drop2">
                   <h2><span class="drop-down-symbol">+</span>&#160;&#160;&#160;Waiver</h2>
               </div>
               <div class="drop-down2">
@@ -381,18 +298,6 @@
 
         // Toggles the second drop down menu if you tab it
         $('#drop2').on('keypress', function (e) {
-            if (e.which === 13) {
-                $(this).trigger('click');
-            }
-        });
-
-        // Toggles the third drop down menu
-        $('#drop3').on("click", function () {
-            drop(2);
-        })
-
-        // Toggles the third drop down menu if you tab it
-        $('#drop3').on('keypress', function (e) {
             if (e.which === 13) {
                 $(this).trigger('click');
             }

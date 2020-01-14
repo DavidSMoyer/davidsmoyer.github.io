@@ -150,6 +150,36 @@ a
 {
     color: $sec-col;
     text-decoration: none;
+
+    &:hover, &:focus
+    {
+        text-decoration: underline;
+    }
+}
+
+.location
+{
+    border: 0.1vw $sec-col solid;
+    padding: 1vh 1vw;
+    display: inline-block;
+    height: 100%;
+}
+
+#location-grid {
+    display: grid;
+    grid-gap: 2vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 1vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    align-items: center;
+
+    &::-webkit-scrollbar
+    {
+        display: none;
+    }
 }
 
 header
@@ -175,6 +205,7 @@ header
             &:hover, &:focus
             {
                 background-color: $sec-col;
+                text-decoration: none;
             }
 
             
@@ -351,7 +382,7 @@ table {
         {
             a
             {
-                font-size: 20px;
+                font-size: 4vw;
             }
         }
 
@@ -382,9 +413,20 @@ table {
         text-align: left;
     }
 
-    label, input, select
+    label, input
     {
         display: block;
+    }
+
+    select
+    {
+        margin: 5px;
+    }
+
+    #location-grid
+    {
+        padding: 40px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #game-display {
