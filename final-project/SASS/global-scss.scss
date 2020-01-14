@@ -39,8 +39,8 @@ $net-col: white;
 $sec-col: #ff0000;
 $fonts: Calibri, Verdana, Sans-Serif;
 $title-fonts: Impact, Bookman, Sans-Serif;
-$font-size: 1vw;
-$title-font-size: 1.5vw;
+$font-size: 20px;
+$title-font-size: 30px;
 
 html {
 
@@ -257,6 +257,7 @@ table {
         border-collapse: collapse;
         font-family: $title-fonts;
         border: 0.1vw $bg-col solid;
+        font-size: $title-font-size;
     }
 
     td {
@@ -264,6 +265,7 @@ table {
         border: 0.1vw $sec-col solid;
         padding: 0.5vw;
         border-collapse: collapse;
+        font-size: $font-size;
     }
 
     tr {
@@ -289,6 +291,7 @@ table {
     padding: 1vw;
     overflow-y: scroll;
     overflow-x: hidden;
+    -ms-overflow-style: none;
 
     .game {
         transition-duration: 0.5s;
@@ -302,6 +305,11 @@ table {
             transform: scale(1.1,1.1);
         }
     }
+
+    &::-webkit-scrollbar
+    {
+        display: none;
+    }
 }
 
 
@@ -309,12 +317,12 @@ table {
 
     h1, h2, h3, h4, h5, h6
     {
-        font-size: 5vw;
+        font-size: 20px;
     }
 
     body
     {
-        font-size: 2.5vw;
+        font-size: 10px;
     }
 
     #slideshow-container
@@ -343,8 +351,13 @@ table {
         {
             a
             {
-                font-size: 4vw;
+                font-size: 20px;
             }
+        }
+
+        img
+        {
+            width: 100%;
         }
     }
 
@@ -354,12 +367,12 @@ table {
         {
             td
             {
-                font-size: 3vw;
+                font-size: 10px;
             }
 
             th
             {
-                font-size: 3.5vw;
+                font-size: 20px;
             }
         }
     }
