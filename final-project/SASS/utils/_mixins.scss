@@ -1,0 +1,49 @@
+/* Creates the keyframes for an animation */
+@mixin keyFrames($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+/* Calls an animation */
+@mixin animation($anim) {
+    -webkit-animation: #{$anim};
+    -moz-animation: #{$anim};
+    -o-animation: #{$anim};
+    -ms-animation: #{$anim};
+    animation: #{$anim};
+}
+
+/* Transforms an element */
+@mixin transform($value) {
+    transform: #{$value};
+    -webkit-transform: #{$value};
+    -ms-transform: #{$value};
+    -moz-transform: #{$value};
+    -o-transform: #{$value};
+}
+
+/* Sets up a transition */
+@mixin transition($value) {
+    transition: #{$value};
+    -webkit-transition: #{$value};
+    -moz-transition: #{$value};
+    -o-transition: #{$value};
+    -ms-transition: #{$value};
+}

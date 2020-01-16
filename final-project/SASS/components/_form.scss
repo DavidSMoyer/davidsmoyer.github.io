@@ -1,0 +1,73 @@
+form {
+    border: 0.25vw $sec-col solid;
+    display: inline-block;
+    padding: 3vh 3vw;
+
+    * {
+        @include animation("fadeIn 0.5s ease");
+    }
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $bg-col;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $bg-col;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $bg-col;
+}
+
+input[type="text"], textarea, input[type="email"], input[type="submit"], input[type="number"], select {
+    background-color: $sec-col;
+    color: $bg-col;
+    border: none;
+    @include transition("background-color 0.5s ease");
+
+    &:hover, &:focus {
+        background-color: scale-color($sec-col, $lightness: -20%);
+    }
+}
+
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 4px;
+    background: url(../Images/spritesheets/input-spritesheet.png) 0 0;
+    display: inline-block;
+    @include transition("transform 0.5s ease");
+
+    &:checked {
+        background: url(../Images/spritesheets/input-spritesheet.png) 0 -15px;
+        @include transform("scale(1.25,1.25)");
+    }
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: url(../Images/spritesheets/input-spritesheet.png) 15px 0;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    @include transition("transform 0.5s ease");
+
+    &:checked {
+        background: url(../Images/spritesheets/input-spritesheet.png) 15px -15px;
+        @include transform("scale(1.25,1.25)");
+    }
+}
+
+.required {
+    color: $sec-col;
+}

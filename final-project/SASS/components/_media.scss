@@ -1,0 +1,74 @@
+@media only screen and (max-width: 768px) {
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 20px;
+    }
+
+    body {
+        font-size: 10px;
+    }
+
+    #slideshow-container {
+        height: 45vh;
+    }
+
+    .slide {
+        img {
+            height: 35vh;
+            margin-bottom: 2vh;
+        }
+    }
+
+    .dot {
+        border-width: 2vw;
+    }
+
+
+    header {
+        nav {
+            a {
+                font-size: 4vw;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    table {
+        tr {
+            td {
+                font-size: 10px;
+            }
+
+            th {
+                font-size: 20px;
+            }
+        }
+    }
+
+    form {
+        text-align: left;
+    }
+
+    label, input {
+        display: block;
+    }
+
+    select {
+        margin: 5px;
+    }
+
+    #location-grid {
+        padding: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-gap: 30px 10px;
+    }
+
+    #game-display {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+}

@@ -1,0 +1,16 @@
+.drop-down {
+    border: 0.25vw $bg-col solid;
+    cursor: pointer;
+    border-collapse: collapse;
+    background-color: scale-color($sec-col, $lightness: -30%);
+
+    h2 {
+        color: $bg-col;
+    }
+}
+
+.drop-down2 {
+    border: 0.25vw scale-color($sec-col, $lightness: -30%) solid;
+    border-collapse: collapse;
+    @include animation('fadeIn 1s 1');
+}

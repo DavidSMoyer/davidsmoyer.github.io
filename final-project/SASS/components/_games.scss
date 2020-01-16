@@ -1,0 +1,41 @@
+#game-display {
+    width: calc(100% - 10vw);
+    margin: 0 5vw;
+    border: 0.25vw $sec-col solid;
+    height: 100vh;
+    display: grid;
+    grid-gap: 1vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 1vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+
+    .game {
+        @include transition("transform 0.5s ease");
+        border: $sec-col 0.25vw solid;
+        @include animation("fadeIn 0.5s ease");
+        display: inline-block;
+
+        &.hide {
+            @include animation("fadeOut 0.5s ease forwards");
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        &:hover, &:focus {
+            @include transform("scale(1.1, 1.1)");
+        }
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

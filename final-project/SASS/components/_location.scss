@@ -1,0 +1,28 @@
+.location {
+    border: 0.1vw $sec-col solid;
+    padding: 1vh 1vw;
+    display: inline-block;
+    height: 100%;
+    @include transition("transform 0.5s ease");
+    @include animation("fadeIn 0.5s ease");
+
+    &:hover, &:focus {
+        @include transform("scale(1.025, 1.025)");
+    }
+}
+
+#location-grid {
+    display: grid;
+    grid-gap: 2vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 1vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    align-items: center;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

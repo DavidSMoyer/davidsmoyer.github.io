@@ -87,10 +87,16 @@
            for (let i = 0; i < games.length; i++)
            {
                if (games[i].children[1].innerHTML.toLowerCase().includes(text)) {
-                   games[i].style.display = "inline-block";
+                   if (games[i].classList.contains("hide") || games[i].classList.contains("hidden")) {
+                       games[i].classList.remove("hide");
+                       games[i].classList.remove("hidden");
+                   }
                }
                else {
-                   games[i].style.display = "none";
+                   if (!games[i].classList.contains("hide")) {
+                       games[i].classList.add("hide");
+                       setTimeout(function () { games[i].classList.add("hidden") }, 300);
+                   }
                }
            }
        }

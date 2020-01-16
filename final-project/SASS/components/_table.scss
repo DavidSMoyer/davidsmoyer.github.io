@@ -1,0 +1,28 @@
+table {
+    border: 0.25vw $sec-col solid;
+    border-collapse: collapse;
+
+    th {
+        background-color: $sec-col;
+        color: $bg-col;
+        font-weight: bolder;
+        padding: 1vw;
+        border-collapse: collapse;
+        font-family: $title-fonts;
+        border: 0.1vw $bg-col solid;
+        font-size: $title-font-size;
+    }
+
+    td {
+        text-align: center;
+        border: 0.1vw $sec-col solid;
+        padding: 0.5vw;
+        border-collapse: collapse;
+        font-size: $font-size;
+    }
+
+    tr {
+        border: 0.1vw $sec-col solid;
+        border-collapse: collapse;
+    }
+}
