@@ -31,9 +31,9 @@
             If you'd like to ask us anything, just go ahead and fill out this form!
         </p>
         <form action="https://formspree.io/mqkpzoap" method="POST">
-            <label for="email">Email: </label><br/>
+            <label for="email"><span class="required">* </span>Email: </label><br/>
             <input type="email" id="email" name="Email" placeholder="Your Email Address..." required /><br/><br/>
-            <label for="question">Your Question: </label><br/>
+            <label for="question"><span class="required">* </span>Your Question: </label><br/>
             <textarea name="Question" id="question" cols="30" required rows="4" placeholder="Ask your question here..."></textarea><br/>
             <input type="submit" />
         </form>
@@ -42,24 +42,24 @@
         <h1>Book a Session</h1>
         <p>Fill out this form and we'll see if we can fit you in!</p>
         <form action="https://formspree.io/mqkpzoap" method="POST">
-            <label>What would you like to book?</label><br />
-            <input type="radio" name="Booking Selection" checked value="Book Stations" /><label>Book Stations</label><br />
-            <input type="radio" name="Booking Selection" value="Private Event" /><label>Book Private Event</label><br /><br />
+            <label><span class="required">* </span>What would you like to book?</label><br />
+            <input type="radio" name="Booking Selection" checked value="Book Stations" id="stat"/><label for="stat">Book Stations</label><br />
+            <input type="radio" name="Booking Selection" value="Private Event" id="priv"/><label for="priv">Book Private Event</label><br /><br />
 
             <!-- Content changes depending on what booking selection is selected -->
             <div id="book-form"></div><br/>
 
-            <label>When would you like to book?</label>
+            <label><span class="required">* </span>When would you like to book?</label>
             <select name="Month"></select>
             <select name="Date"></select>
 
             <p id="cost"></p>
             <input type="hidden" name="Price" />
 
-            <label>How would you like to pay?</label><br />
-            <input type="radio" name="Payment Method" required value="Debit" /><label>Debit</label><br />
-            <input type="radio" name="Payment Method" required value="Credit" /><label>Credit</label><br />
-            <input type="radio" name="Payment Method" required value="Cash" /><label>Cash</label><br /><br />
+            <label><span class="required">* </span>How would you like to pay?</label><br />
+            <input type="radio" name="Payment Method" required value="Debit" id="deb" /><label for="deb">Debit</label><br />
+            <input type="radio" name="Payment Method" required value="Credit" id="cred" /><label for="cred">Credit</label><br />
+            <input type="radio" name="Payment Method" required value="Cash" id="cash" /><label for="cash">Cash</label><br /><br />
 
             <input type="submit" /><br />
         </form>
@@ -132,13 +132,13 @@
             // Displays different booking forms depending on selection
             if (displayed != 1 && radio[1].checked == true)
             {
-                form.innerHTML = "<label>Interested in catering or alcohol?</label> <br /><input type='radio' name='Catering or Alcohol' value='Catering' /> <label>Catering</label> <br /><input type='radio' name='Catering or Alcohol' value='Alcohol' /> <label>Alcohol</label> <br /><input type='radio' name='Catering or Alcohol' value='Both' /> <label>Both</label> <br /><input type='radio' name='Catering or Alcohol' checked value='Niether' /> <label>Niether</label><p id='cat-msg'>We'll be in touch regarding catering and alcohol.</p>";
+                form.innerHTML = "<label><span class='required'>* </span>Interested in catering or alcohol?</label> <br /><input type='radio' name='Catering or Alcohol' value='Catering' id='cat'/> <label for='cat'>Catering</label> <br /><input type='radio' name='Catering or Alcohol' value='Alcohol' id='alc'/> <label for='alc'>Alcohol</label> <br /><input type='radio' name='Catering or Alcohol' value='Both' id='both'/> <label for='both'>Both</label> <br /><input type='radio' name='Catering or Alcohol' checked value='Niether' id='none'/> <label for='none'>Niether</label><p id='cat-msg'>We'll be in touch regarding catering and alcohol.</p>";
                 displayed = 1;
                 extras = [document.getElementById("cat-msg")];
             }
             else if (displayed != 0 && radio[0].checked == true)
             {
-                form.innerHTML = "<label for='stations'>How many stations would you like to book? </label><select id='stations' name='# Of Stations'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option><option value='10'>10</option><option value='11'>11</option><option value='12'>12</option><option value='13'>13</option><option value='14'>14</option><option value='15'>15</option><option value='16'>16</option></select><br/><br/><div id='party-room-div'><label for='party-room'>Would you like to rent out the party room? </label><input type='checkbox' name='Party Room' /></div>";
+                form.innerHTML = "<label for='stations'><span class='required'>* </span>How many stations would you like to book? </label><select id='stations' name='# Of Stations'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option><option value='10'>10</option><option value='11'>11</option><option value='12'>12</option><option value='13'>13</option><option value='14'>14</option><option value='15'>15</option><option value='16'>16</option></select><br/><br/><div id='party-room-div'><label for='party-room'>Would you like to rent out the party room? </label><input type='checkbox' name='Party Room' id='party-room'/></div>";
                 displayed = 0;
                 extras = [document.getElementById("stations"), document.getElementById("party-room-div")];
             }
