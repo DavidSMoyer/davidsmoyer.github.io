@@ -22,13 +22,18 @@
         </nav>
     </header>
     
+    <!-- The main content of the page -->
     <main>
         <h1>Search our vast collection of games!</h1>
         <p>We have a variety of games for you to choose from. Just go ahead and start typing and you'll see if we have the games you're looking for!</p>
         <center>
             <input type="text" id="search" placeholder="Game Name..." /><br /><br />
         </center>
+
+        <!-- Game container -->
         <div id="game-display">
+
+            <!-- Available Games-->
             <div class="game">
                 <img src="Images/games/beat-saber.jpg"/>
                 <h1>Beat Saber</h1>
@@ -77,10 +82,12 @@
 
 
     <script>
+        // Initializes variables
         var games = document.getElementsByClassName("game");
         var search = document.getElementById("search");
         var interval = setInterval(updateSearch, 1);
 
+        // Updates what games are visible every millisecond
        function updateSearch()
        {
            let text = search.value.toLowerCase();
