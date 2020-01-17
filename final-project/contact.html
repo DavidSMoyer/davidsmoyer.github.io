@@ -86,6 +86,49 @@
             date = new Date();
             price = 0;
 
+            // Updates the dates of the date selection
+            if (dateStuff[0].childElementCount == 0) {
+                // Creates the month(s)
+                let month = document.createElement("option");
+                month.value = months[date.getMonth()];
+                month.innerHTML = months[date.getMonth()];
+                dateStuff[0].appendChild(month);
+                if (date.getDate() + 20 > monthLength(date.getMonth(), date.getYear())) {
+                    month = document.createElement("option");
+                    if (date.getMonth() != 11) {
+                        month.value = months[date.getMonth() + 1];
+                        month.innerHTML = months[date.getMonth() + 1];
+                    }
+                    else {
+                        month.value = months[0];
+                        month.innerHTML = months[0];
+                    }
+                    dateStuff[0].appendChild(month);
+                }
+
+                // Creates the days
+                for (let i = 1; i < 20; i++) {
+                    let day = document.createElement("option");
+                    if (date.getDate() + i <= monthLength(date.getMonth(), date.getYear())) {
+                        day.value = date.getDate() + i;
+                        day.innerHTML = date.getDate() + i;
+                    }
+                    else {
+                        day.value = date.getDate() + i - monthLength(date.getMonth(), date.getYear());
+                        day.innerHTML = date.getDate() + i - monthLength(date.getMonth(), date.getYear());
+                    }
+                    dateStuff[1].appendChild(day);
+                }
+            }
+
+            // Updates the month dependent on the day
+            if (dateStuff[0].selectedIndex == 1 && dateStuff[1].value >= date.getDate() + 1) {
+                dateStuff[0].selectedIndex = 0;
+            }
+            else if (dateStuff[0].selectedIndex == 0 && dateStuff[1].value < date.getDate() + 1) {
+                dateStuff[0].selectedIndex = 1;
+            }
+
             // Displays different booking forms depending on selection
             if (displayed != 1 && radio[1].checked == true)
             {
@@ -114,51 +157,6 @@
                 if (extras[1].children[1].checked == true) {
                     price += 50.00;
                 }
-
-                // Updates the dates of the date selection
-                if (dateStuff[0].childElementCount == 0) {
-                    // Creates the month(s)
-                    let month = document.createElement("option");
-                    month.value = months[date.getMonth()];
-                    month.innerHTML = months[date.getMonth()];
-                    dateStuff[0].appendChild(month);
-                    if (date.getDate() + 20 > monthLength(date.getMonth(), date.getYear())) {
-                        month = document.createElement("option");
-                        if (date.getMonth() != 11) {
-                            month.value = months[date.getMonth() + 1];
-                            month.innerHTML = months[date.getMonth() + 1];
-                        }
-                        else {
-                            month.value = months[0];
-                            month.innerHTML = months[0];
-                        }
-                        dateStuff[0].appendChild(month);
-                    }
-
-                    // Creates the days
-                    for (let i = 1; i < 20; i++) {
-                        let day = document.createElement("option");
-                        if (date.getDate() + i <= monthLength(date.getMonth(), date.getYear())) {
-                            day.value = date.getDate() + i;
-                            day.innerHTML = date.getDate() + i;
-                        }
-                        else {
-                            day.value = date.getDate() + i - monthLength(date.getMonth(), date.getYear());
-                            day.innerHTML = date.getDate() + i - monthLength(date.getMonth(), date.getYear());
-                        }
-                        dateStuff[1].appendChild(day);
-                    }
-                }
-
-                // Updates the month dependent on the day
-                if (dateStuff[0].selectedIndex == 1 && dateStuff[1].value >= date.getDate() + 1) {
-                    dateStuff[0].selectedIndex = 0;
-                }
-                else if (dateStuff[0].selectedIndex == 0 && dateStuff[1].value < date.getDate() + 1) {
-                    dateStuff[0].selectedIndex = 1;
-                }
-                
-                
 
                 // Calculates how prices should be handled depending on if it's thursday or not
                 if (isThursday(dateStuff[1].value)) {
