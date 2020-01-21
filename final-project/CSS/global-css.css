@@ -1,12 +1,8 @@
-/* Create Mixins to be used later */
-/* Creates the keyframes for an animation */
-/* Calls an animation */
-/* Transforms an element */
-/* Sets up a transition */
-/* Initialie variables for easy use */
+/* Sets smooth scrolling behavior */
 html {
   scroll-behavior: smooth; }
 
+/* Initializes default styles for text and colour for the page */
 body {
   background-color: black;
   color: white;
@@ -19,6 +15,28 @@ body {
   -ms-animation: floatIn 1s ease;
   animation: floatIn 1s ease; }
 
+/* Changes the default autofill colour */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #ff0000 inset !important; }
+
+/* Styles the header types */
+h1, h2, h3, h4, h5, h6 {
+  color: #ff0000;
+  font-family: Impact, Bookman, Sans-Serif;
+  letter-spacing: 0.1vw;
+  font-size: 30px; }
+
+/* Styles any lone anchors */
+a {
+  color: #ff0000;
+  text-decoration: none; }
+  a:hover, a:focus {
+    text-decoration: underline; }
+
+/* Styles forms */
 form {
   border: 0.25vw #ff0000 solid;
   display: inline-block;
@@ -30,6 +48,7 @@ form {
     -ms-animation: fadeIn 0.5s ease;
     animation: fadeIn 0.5s ease; }
 
+/* Styles placeholder text */
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: black;
@@ -44,6 +63,7 @@ form {
   /* Microsoft Edge */
   color: black; }
 
+/* Styles any text inputs, and select */
 input[type="text"], textarea, input[type="email"], input[type="submit"], input[type="number"], select {
   background-color: #ff0000;
   color: black;
@@ -56,6 +76,7 @@ input[type="text"], textarea, input[type="email"], input[type="submit"], input[t
   input[type="text"]:hover, input[type="text"]:focus, textarea:hover, textarea:focus, input[type="email"]:hover, input[type="email"]:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="number"]:hover, input[type="number"]:focus, select:hover, select:focus {
     background-color: #cc0000; }
 
+/* Styles radio inputs */
 input[type="radio"] {
   appearance: none;
   -webkit-appearance: none;
@@ -79,6 +100,7 @@ input[type="radio"] {
     -moz-transform: scale(1.25,1.25);
     -o-transform: scale(1.25,1.25); }
 
+/* Styles checkbox inputs */
 input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
@@ -102,24 +124,11 @@ input[type="checkbox"] {
     -moz-transform: scale(1.25,1.25);
     -o-transform: scale(1.25,1.25); }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #ff0000 inset !important; }
+/* Changes text colour for required asterisks */
+.required {
+  color: #ff0000; }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #ff0000;
-  font-family: Impact, Bookman, Sans-Serif;
-  letter-spacing: 0.1vw;
-  font-size: 30px; }
-
-a {
-  color: #ff0000;
-  text-decoration: none; }
-  a:hover, a:focus {
-    text-decoration: underline; }
-
+/* CSS regarding the locations page */
 .location {
   border: 0.1vw #ff0000 solid;
   padding: 1vh 1vw;
@@ -155,6 +164,7 @@ a {
   #location-grid::-webkit-scrollbar {
     display: none; }
 
+/* CSS regarding the header */
 header {
   width: calc(100% - 6vw);
   margin: 0 3vw; }
@@ -178,6 +188,11 @@ header {
         background-color: #ff0000;
         text-decoration: none; }
 
+#active {
+    background-color: #ff0000;
+}
+
+/* CSS regarding the slideshow */
 #slideshow-container {
   border: 0.5vw #ff0000 solid;
   height: 75vh; }
@@ -216,9 +231,7 @@ header {
     border-color: #cc0000;
     background-color: #cc0000; }
 
-#active {
-  background-color: #ff0000; }
-
+/* CSS regarding drop down menus */
 .drop-down {
   border: 0.25vw black solid;
   cursor: pointer;
@@ -236,6 +249,7 @@ header {
   -ms-animation: fadeIn 1s 1;
   animation: fadeIn 1s 1; }
 
+/* CSS regarding tables */
 table {
   border: 0.25vw #ff0000 solid;
   border-collapse: collapse; }
@@ -258,9 +272,7 @@ table {
     border: 0.1vw #ff0000 solid;
     border-collapse: collapse; }
 
-.required {
-  color: #ff0000; }
-
+/* CSS regarding the games page */
 #game-display {
   width: calc(100% - 10vw);
   margin: 0 5vw;
@@ -306,6 +318,7 @@ table {
   #game-display::-webkit-scrollbar {
     display: none; }
 
+/* Media Query for mobile screens */
 @media only screen and (max-width: 768px) {
   h1, h2, h3, h4, h5, h6 {
     font-size: 20px; }
@@ -341,6 +354,7 @@ table {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 1fr); } }
 
+/* Animations for the page */
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
